@@ -1,0 +1,13 @@
+# Build output (if using a bundler later)
+dist/
+
+# Editor temporary files
+.vscode/
+.idea/
+
+# Testing frameworks (if applicable)
+__tests__/
+jest/
+
+# Development server configuration
+devServer.config.js
