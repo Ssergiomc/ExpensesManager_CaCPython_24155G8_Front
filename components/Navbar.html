@@ -16,7 +16,7 @@
         <li class="nav-item"><router-link class="nav-link" :class="{ active: $route.path === '/dashboard' }" to="/dashboard">Dashboard</router-link></li>
         <li class="nav-item"><router-link class="nav-link" :class="{ active: $route.path === '/gasto' }" to="/gasto">Gasto</router-link></li>
         <li class="nav-item"><router-link class="nav-link" :class="{ active: $route.path === '/contacto' }" to="/contacto">Contacto</router-link></li>
-        <li class="nav-item"><router-link class="nav-link" :class="{ active: $route.path === '/test' }" to="/test">Test</router-link></li>
+        <!-- <li class="nav-item"><router-link class="nav-link" :class="{ active: $route.path === '/test' }" to="/test">Test</router-link></li> -->
       </ul>
       <button class="btn mx-md-3 my-sm-0 btn-toggle-mode" type="button" @click="toggleDarkMode">
         <i :class="{ 'bi bi-brightness-high-fill': $root.isDarkMode, 'bi bi-moon': !$root.isDarkMode }" style="fill: currentColor"></i>
