@@ -1,0 +1,126 @@
+/** Seccion GASTO **/
+
+.article-gasto {
+  padding: 0 10%;
+  margin: 2rem 0 1rem 0;
+  .form-gasto {
+    display: flex;
+    flex-direction: column;
+    fieldset {
+      margin: 2rem 0 1rem;
+    }
+    .input-group {
+      margin-bottom: 0.25rem;
+      align-items: center;
+      label{
+        min-width: 120px;
+        text-align: left;
+      }
+      input{
+        border-radius: 3px !important;
+      }
+      select{
+        position: relative;
+        flex: 1 1 auto;
+        height: 35px;
+        border: 1px solid #ced4da;
+        border-radius: 3px !important;
+        background-color: #ffffff;
+      }
+    }
+    @media screen and (min-width: 992px) {
+      .form-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+      }
+    }
+  }
+  
+  .data-gasto{
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 1rem auto 0;
+    }
+    
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      th, td {
+        padding:5px;
+        white-space: nowrap;
+      }
+      th {
+        background-color: #49a7e9;
+      }
+      tbody{
+          tr{
+          &:nth-child(even) {
+            background-color: steelblue;
+          }
+          &:hover {
+            background-color: var(--toggle-button-mode-color);
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 992px) {
+      table{
+        width: 60%;
+      }
+    }
+    @media screen and (max-width: 576px) {
+      table{
+        display: block;
+        overflow-x: auto;
+        scrollbar-color: steelblue goldenrod;
+      }
+    }
+
+    /*! TABLE RESPONSIVE */
+    .data-gasto-table{
+      order: 2;
+      @media screen and (min-width: 992px) {
+        order: 1;
+      }
+    }
+    .data-gasto-filters{
+      order: 1;
+      @media screen and (max-width: 992px) {
+        margin-bottom: 1rem;
+        margin-inline: auto;
+      }
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        display: flex;
+        flex-direction: column;
+      }
+      @media screen and (min-width: 992px) {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+      }
+      .filters-container {
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .filters-group{
+          margin: 5px;
+          label{
+            min-width: 125px;
+            text-align: left;
+          }
+          select{
+            min-width: 170px;
+          }
+        }
+      }
+    }   
+  }
+}
