@@ -18,10 +18,19 @@ const loadFixedAppComponents = async (componentName) => {
     routes: await Promise.all(
       routes.map(async (route) => ({
         path: route.path,
-        component: route.component ? await route.component() : undefined,
+        component: route.component ? route.component() : undefined,
       }))
     ),
-  })
+  });
+
+  // Add a global navigation guard
+  router.beforeEach((to, from, next) => {
+    const matchedRoute = router.resolve(to).matched.length > 0;
+    if (!matchedRoute) {
+      console.log('Error 404: Route not found');
+    }
+    next();
+  });
 
   const navbarContent = { template: await loadFixedAppComponents('Navbar') }
   const footerContent = { template: await loadFixedAppComponents('Footer') }
