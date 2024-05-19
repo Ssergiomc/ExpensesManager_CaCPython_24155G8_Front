@@ -2,6 +2,10 @@
 
 Family expenses manager
 
+<h2>Despliegue Online Netlify</h2>
+<a href="https://expensesmanagercacpython24155g8front.netlify.app/" target="_blank">Pruebame online / Click to try me online</a>
+
+
 ## Table of contents
 - [Description](#description)
 - [Technologies](#technologies)
@@ -10,10 +14,10 @@ Family expenses manager
 - [Contributing](#contributing)
 - [License](#license)
 - [Questions](#questions)
+- [Deploy](#deploy)
 
-## Description
 
-[Production Release](https://expensesmanagercacpython24155g8front.netlify.app/)
+## 🟦 Description
 
 Our expense tracker family app provides a seamless solution for managing expenses effortlessly.
 
@@ -25,30 +29,30 @@ Our expense tracker family app provides a seamless solution for managing expense
 
   4. Main Features:
   
-    - **Expenses - Expense Tracking**: 
+    🔷 **Expenses - Expense Tracking**: 
       - Users can easily input and categorize expenses, keeping a detailed record of their spending habits.
-      - **Expenses - Receipt Upload**: *(TO BE ADDED)*
+      🔴  **Expenses - Receipt Upload**: *(TO BE ADDED)*
         - The app allows users to upload pictures of receipts, enhancing accuracy and organization.
-      - **Expenses - Form Validation**: *(ADDED)*
+      🟢  **Expenses - Form Validation**: *(ADDED)*
         - There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
-    - **Dashboard**: *(DISPLAY RANDOM DATA)*
+    🔷 **Dashboard**: *(DISPLAY RANDOM DATA)*
       - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends.
-    - **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
+    🔶 **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
       - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection.
-    - **Profile Management**: *(TO BE ADDED)*
+    🔶 **Profile Management**: *(TO BE ADDED)*
       - Users can manage their personal information and preferences within the app, ensuring a tailored experience.
-    - **Contact**: *(ADDED)*
+    🔷 **Contact**: *(ADDED)*
       - This section displays an iframe map from the Google Maps.
-    - **Theme Mode Control**: *(ADDED)*
+    🔷 **Theme Mode Control**: *(ADDED)*
       - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience.
-    - **Responsive Design**: *(ADDED)*
+    🔷 **Responsive Design**: *(ADDED)*
       - With responsiveness built-in, the app adapts seamlessly to different screen sizes and devices, ensuring accessibility for all users.
-    - **Burger Menu**: *(ADDED)*
+    🔷 **Burger Menu**: *(ADDED)*
       - A burger menu is incorporated for iproved navigation on smaller screens, enhancing usability and convenience. 
 
 Overall, the app combines robust functionality, user-friendly design, and seamless accessibility to provide an efficient and enjoyable expense tracking experience for families.
 
-## Technologies
+## 🟦 Technologies
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=E34F26&labelColor=101010&color=E34F26)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=1572B6&labelColor=101010)
@@ -63,13 +67,13 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=00C7B7&labelColor=101010)
 
-## Install
+## 🟦 Install
 - Download the project
 
-## Usage
+## 🟦 Usage
 - run app.js on Live Server 
  
-## Contributing
+## 🟦 Contributing
 ### Currently working on this project
 - Clone the repository
 - Create a new branch
@@ -82,7 +86,11 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 - Commit your changes
 - Push to your fork
 - Submit a pull request -->
-## License
+## 🟦 License
 MIT License
-## Questions
+
+##  🟦 Questions
 If you have any questions about the project, please contact me via [linkedin](https://www.linkedin.com/in/sergio-martinez-cuesta/) or [GitHub](https://github.com/Ssergiomc)
+
+## 🟦 Deploy
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2944f649-e79f-497f-9f04-b1fcbd9775a3/deploy-status)](https://app.netlify.com/sites/expensesmanagercacpython24155g8front/deploys)
