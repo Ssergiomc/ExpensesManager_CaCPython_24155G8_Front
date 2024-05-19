@@ -7,6 +7,7 @@
   --background-color: #ffffff;
   --text-color: #000000;
   --toggle-text-home: goldenrod;
+  --toggle-link-hover-color: navy;
   --toggle-button-mode-color: rgba(52, 53, 54, 0.75);
   --toggle-button-mode-background: rgba(255, 255, 0, 0.71);
 }
@@ -16,6 +17,7 @@
   --background-color: #303030;
   --text-color: #ffffff;
   --toggle-text-home: #ffffff;
+  --toggle-link-hover-color: goldenrod;
   --toggle-button-mode-color: rgba(255, 255, 0, 0.71);
   --toggle-button-mode-background: rgba(52, 53, 54, 0.75);
   /* --toogle-highlight-nav-section: rgba(15, 102, 189, 0.75); */

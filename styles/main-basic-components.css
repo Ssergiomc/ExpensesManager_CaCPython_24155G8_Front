@@ -1,5 +1,14 @@
 /** MAIN BASIC COMPONENTS **/
 
+a {
+  text-decoration: none;
+  color: var(--main-scheme-color);
+  cursor: pointer;
+  &:hover {
+    color: var(--toggle-link-hover-color);
+  }
+}
+
 .subtitle{
   margin: 2rem auto 1rem;
 }
