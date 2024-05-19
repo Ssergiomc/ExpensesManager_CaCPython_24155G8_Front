@@ -10,10 +10,11 @@ Family expenses manager
 - [Contributing](#contributing)
 - [License](#license)
 - [Questions](#questions)
-- 
+
 ## Description
 
-![expensesManager_CaCPython_24155G8_Front](https://expensesmanagercacpython24155g8front.netlify.app/)
+[Production Release](https://expensesmanagercacpython24155g8front.netlify.app/)
+
 Our expense tracker family app provides a seamless solution for managing expenses effortlessly.
 
   1. Functionality: The app enables users to track expenses, upload receipts, and monitor their financial evolution through a dashboard.
@@ -24,22 +25,22 @@ Our expense tracker family app provides a seamless solution for managing expense
 
   4. Main Features:
   
-  - **Expense Tracking**: 
-    - Users can easily input and categorize expenses, keeping a detailed record of their spending habits.
-  - **Receipt Upload**: 
-    - The app allows users to upload pictures of receipts, enhancing accuracy and organization. **(TO BE ADDED)**
-  - **Dashboard**: 
-    - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends. **(DISPLAY RANDOM DATA)**
-  - **User Authentication**: 
-    - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection. **(FUNCTIONALITY TO BE ADDED)**
-  - **Profile Management**: 
-    - Users can manage their personal information and preferences within the app, ensuring a tailored experience. **(TO BE ADDED)**
-  - **Theme Mode Control**: 
-    - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience. **(ADDED)**
-  - **Responsive Design**: 
-    - With responsiveness built-in, the app adapts seamlessly to different screen sizes and devices, ensuring accessibility for all users. **(ADDED)**
-  - **Burger Menu**: 
-    - A burger menu is incorporated for improved navigation on smaller screens, enhancing usability and convenience. **(ADDED)**
+    - **Expense Tracking**: 
+      - Users can easily input and categorize expenses, keeping a detailed record of their spending habits.
+    - **Receipt Upload**: *(TO BE ADDED)*
+      - The app allows users to upload pictures of receipts, enhancing accuracy and organization.
+    - **Dashboard**: *(DISPLAY RANDOM DATA)*
+      - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends.
+    - **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
+      - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection.
+    - **Profile Management**: *(TO BE ADDED)*
+      - Users can manage their personal information and preferences within the app, ensuring a tailored experience.
+    - **Theme Mode Control**: *(ADDED)*
+      - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience.
+    - **Responsive Design**: *(ADDED)*
+      - With responsiveness built-in, the app adapts seamlessly to different screen sizes and devices, ensuring accessibility for all users.
+    - **Burger Menu**: *(ADDED)*
+      - A burger menu is incorporated for iproved navigation on smaller screens, enhancing usability and convenience. 
 
 Overall, the app combines robust functionality, user-friendly design, and seamless accessibility to provide an efficient and enjoyable expense tracking experience for families.
 
@@ -60,10 +61,10 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 
 ## Install
 - Download the project
-- 
+
 ## Usage
 - run app.js on Live Server 
-- 
+ 
 ## Contributing
 ### Currently working on this project
 - Clone the repository
