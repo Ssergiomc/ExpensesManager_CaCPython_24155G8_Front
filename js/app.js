@@ -23,14 +23,15 @@ const loadFixedAppComponents = async (componentName) => {
     ),
   });
 
-  // Add a global navigation guard
-  router.beforeEach((to, from, next) => {
-    const matchedRoute = router.resolve(to).matched.length > 0;
-    if (!matchedRoute) {
-      console.log('Error 404: Route not found');
-    }
-    next();
-  });
+  // // Add a global navigation guard
+  // router.beforeEach((to, from, next) => {
+  //   const matchedRoute = router.resolve(to).matched.length > 0;
+  //   console.log(`Route matched: ${matchedRoute}`);
+  //   if (!matchedRoute) {
+  //     console.log('Error 404: Route not found');
+  //   }
+  //   next();
+  // });
 
   const navbarContent = { template: await loadFixedAppComponents('Navbar') }
   const footerContent = { template: await loadFixedAppComponents('Footer') }

@@ -39,7 +39,7 @@ const routes = [
   { path: '/gasto', component: () => createComponent('Gasto') },
   { path: '/contacto', component: () => createComponent('Contacto') },
   { path: '/test', component: () => createComponent('Test') },
-  { path: '/:pathMatch(.*)*', component: () =>  console.log('Error 404')} //createComponent('ErrorPage')
+  // { path: '/:pathMatch(.*)*', component: () =>  createComponent('ErrorPage')}
 ];
 
 export default routes;
