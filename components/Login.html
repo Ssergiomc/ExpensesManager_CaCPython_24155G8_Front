@@ -1,0 +1,53 @@
+<article class="article-login">
+  <div class="login-container">
+    <img class="login-image-left" src='/assets/images/extra/pngwing.png' alt='dog image login'></img>
+    <div class="login-form">
+      <h1 class="title">Login</h1>
+      <h2 class="subtitle">Inicia sesión</h2>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input
+            class="input"
+            type="email"
+            v-model="email"
+            placeholder="Email"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Contraseña</label>
+        <div class="control">
+          <input
+            class="input"
+            type="password"
+            v-model="password"
+            placeholder="Contraseña"
+          />
+        </div>
+      </div>
+
+      <div class="notification is-danger" v-if="error">
+        <button class="delete" @click="error = null"></button>
+        {{ error }}
+      </div>
+
+      <div class="notification is-success" v-if="success">
+        <button class="delete" @click="success = null"></button>
+        {{ success }}
+      </div>
+
+      <button class="button-form button-login" @click="handleClick">
+        Iniciar sesión
+      </button>
+
+      <p>
+        ¿No tienes cuenta? <router-link to="/register">Registrate</router-link>
+      </p>
+
+      <p><router-link to="/">Volver al inicio</router-link></p>
+    </div>
+  </div>
+</article>
