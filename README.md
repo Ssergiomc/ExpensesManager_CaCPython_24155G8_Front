@@ -25,16 +25,20 @@ Our expense tracker family app provides a seamless solution for managing expense
 
   4. Main Features:
   
-    - **Expense Tracking**: 
+    - **Expenses - Expense Tracking**: 
       - Users can easily input and categorize expenses, keeping a detailed record of their spending habits.
-    - **Receipt Upload**: *(TO BE ADDED)*
-      - The app allows users to upload pictures of receipts, enhancing accuracy and organization.
+      - **Expenses - Receipt Upload**: *(TO BE ADDED)*
+        - The app allows users to upload pictures of receipts, enhancing accuracy and organization.
+      - **Expenses - Form Validation**: *(ADDED)*
+        - There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
     - **Dashboard**: *(DISPLAY RANDOM DATA)*
       - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends.
     - **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
       - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection.
     - **Profile Management**: *(TO BE ADDED)*
       - Users can manage their personal information and preferences within the app, ensuring a tailored experience.
+    - **Contact**: *(ADDED)*
+      - This section displays an iframe map from the Google Maps.
     - **Theme Mode Control**: *(ADDED)*
       - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience.
     - **Responsive Design**: *(ADDED)*

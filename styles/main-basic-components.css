@@ -28,3 +28,9 @@ a {
     border: var(--toggle-button-mode-background) 1px solid;
   }
 }
+
+.error {
+  color: crimson;
+  font-size: 0.875em;
+  margin: 0.25rem 0;
+}

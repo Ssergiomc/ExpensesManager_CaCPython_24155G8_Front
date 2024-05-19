@@ -9,6 +9,10 @@
     fieldset {
       margin: 2rem 0 1rem;
     }
+    .input-group-control-error {
+      display: flex;
+      flex-direction: column;
+    }
     .input-group {
       margin-bottom: 0.25rem;
       align-items: center;
