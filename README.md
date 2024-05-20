@@ -37,7 +37,7 @@ Our expense tracker family app provides a seamless solution for managing expense
         - There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
     🔷 **Dashboard**: *(DISPLAY RANDOM DATA)*
       - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends.
-    🔶 **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
+    - **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
       - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection.
     🔶 **Profile Management**: *(TO BE ADDED)*
       - Users can manage their personal information and preferences within the app, ensuring a tailored experience.
@@ -91,6 +91,3 @@ MIT License
 
 ##  🟦 Questions
 If you have any questions about the project, please contact me via [linkedin](https://www.linkedin.com/in/sergio-martinez-cuesta/) or [GitHub](https://github.com/Ssergiomc)
-
-## 🟦 Deploy
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2944f649-e79f-497f-9f04-b1fcbd9775a3/deploy-status)](https://app.netlify.com/sites/expensesmanagercacpython24155g8front/deploys)

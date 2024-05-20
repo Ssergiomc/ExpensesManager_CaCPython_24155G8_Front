@@ -1,0 +1,58 @@
+body{
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.izquierda,
+.derecha {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+
+@media (max-width: 700px) {
+    .izquierda,
+    .derecha {
+        width: 100%;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+li {
+    cursor: pointer;
+    list-style: none;
+    padding: 5px 0;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
