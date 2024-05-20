@@ -33,6 +33,16 @@ Our expense tracker family app provides a seamless solution for managing expense
         - There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
     - **Dashboard**: *(DISPLAY RANDOM DATA)*
       - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends.
+        - `gastos`: gastos generados aleatoriamente para un mes.
+        - `categorias`: contiene las categorías de gastos posibles.
+        - `gastosFiltrados`:  los gastos filtrados por categoría.
+        - `computed`: propiedad llamada `ultimosGastos`,  devuelve los últimos 10 gastos, ya sea por categoría o todos si no hay ningún filtro aplicado.
+        - `methods`: métodos de la aplicación:
+        - `filtrarPorCategoria(categoria)`: gastos por categoría seleccionada y actualizaion de los gráficos.
+        - `filtrarGastosPorCategoria(gastos, categoria)`: filtrar los gastos por categoría.
+        - `actualizarGraficos()`: Actualiza los gráficos con los datos actualizados.
+        - `calcularGastosPorCategoria()`: gastos totales por cada categoría.
+        - `mounted()`: se llama al método `actualizarGraficos()` para inicializar los gráficos, se utilizan las bibliotecas Chart.js para renderizar los gráficos en los elementos canvas correspondientes. El gráfico de barras muestra los gastos por categoría, mientras que el gráfico de líneas muestra la evolución de los gastos a lo largo del tiempo.
     - **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
       - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection.
     - **Profile Management**: *(TO BE ADDED)*
