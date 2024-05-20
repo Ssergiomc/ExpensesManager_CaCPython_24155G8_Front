@@ -1,41 +1,42 @@
-<section>
-    <div id="app">
-        <div class="centro">
-            <div class="izquierda">
-                <h2>Rubros de Gastos</h2>
-                <canvas id="expensesChart"></canvas>
-                <h2>Últimos 10 Gastos</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Rubro</th>
-                            <th>Monto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(gasto, index) in ultimosGastos" :key="index">
-                            <td>{{ gasto.fecha }}</td>
-                            <td>{{ gasto.categoria }}</td>
-                            <td>$ {{ gasto.monto }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="derecha">
-                <h2>Gráfico de Tendencias</h2>
-                <canvas id="trendChart"></canvas>
-                <h2>Filtrar por Rubro</h2>
-                <ul>
-                    <li v-for="categoria in categorias" :key="categoria" @click="filtrarPorCategoria(categoria)">
-                        {{ categoria }}
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/vue@3"></script>
+<article class="article-dash">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="./dashboard.js"></script>  -->
-</section>
+
+    <h1>Rubros de Gastos</h1>
+    <h2>Últimos 10 Gastos</h2>
+  <div class="centro">
+    <div class="izquierda">
+      <canvas id="expensesChart"></canvas>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Rubro</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(gasto, index) in ultimosGastos" :key="index">
+            <td>{{ gasto.fecha }}</td>
+            <td>{{ gasto.categoria }}</td>
+            <td>$ {{ gasto.monto }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="derecha">
+      <h2>Gráfico de Tendencias</h2>
+      <canvas id="trendChart"></canvas>
+      <h2>Filtrar por Rubro</h2>
+      <ul>
+        <li
+          v-for="categoria in categorias"
+          :key="categoria"
+          @click="filtrarPorCategoria(categoria)"
+        >
+          {{ categoria }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</article>

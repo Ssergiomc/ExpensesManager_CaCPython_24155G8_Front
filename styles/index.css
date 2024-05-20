@@ -6,6 +6,8 @@
 /* Import dynamic components pages */
 @import 'components/home.css';
 @import 'components/login.css';
+/* @import 'components/registro.css'; */
+@import 'components/dash.css';
 @import 'components/gasto.css';
 @import 'components/contacto.css';
 
