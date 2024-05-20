@@ -59,7 +59,7 @@
         white-space: nowrap;
       }
       th {
-        background-color: #49a7e9;
+        background-color: var(--main-scheme-color);
       }
       tbody{
           tr{
