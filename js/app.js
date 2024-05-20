@@ -52,6 +52,8 @@ const loadFixedAppComponents = async (componentName) => {
     },
     methods: {
       toggleDarkMode() {
+        const manifest = document.getElementById('theme-manifest');
+        manifest.href = !this.isDarkMode ? "../manifest.json" : "../manifestdark.json";
         if (typeof Storage !== 'undefined') {
           this.isDarkMode = !this.isDarkMode
           localStorage.setItem('isDarkMode', this.isDarkMode.toString()) // Store the string representation
