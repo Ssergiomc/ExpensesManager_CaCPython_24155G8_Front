@@ -1,7 +1,6 @@
 /** Seccion INICIO **/
 
 .home-container {
-  height: 92vh;
   .image-home {
     display: flex;
     flex-direction: column;
@@ -9,7 +8,7 @@
     background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('/assets/images/extra/coins-1726618_1280.jpg');
     background-size: cover;
     background-position: center;
-    height: 100% !important;
+    height: 92vh !important;
     .text-home {
       display: flex;
       flex-direction: column;
