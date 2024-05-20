@@ -20,6 +20,9 @@
   color: var(--text-color);
 }
 
+body{
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 /** MAIN SECTION **/
 .app-section {

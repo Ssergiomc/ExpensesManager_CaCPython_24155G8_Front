@@ -109,53 +109,53 @@ export const componentConfigs = {
         if (graficoGastos) {
           graficoGastos.destroy();
         }
-        // graficoGastos = new Chart(ctx1, {
-        //   type: 'bar',
-        //   data: {
-        //     labels: categorias,
-        //     datasets: [{
-        //       label: 'Porcentaje de Gastos por Rubro',
-        //       data: categorias.map(categoria => porcentajes[categoria] || 0),
-        //       backgroundColor: ['#3498db', '#9b59b6', '#e74c3c', '#2ecc71', '#f1c40f'],
-        //       borderColor: '#fff',
-        //       borderWidth: 1
-        //     }]
-        //   },
-        //   options: {
-        //     scales: {
-        //       y: {
-        //         beginAtZero: true,
-        //         ticks: {
-        //           callback: function (value) {
-        //             return value + '%';
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-        // });
+        graficoGastos = new Chart(ctx1, {
+          type: 'bar',
+          data: {
+            labels: categorias,
+            datasets: [{
+              label: 'Porcentaje de Gastos por Rubro',
+              data: categorias.map(categoria => porcentajes[categoria] || 0),
+              backgroundColor: ['#3498db', '#9b59b6', '#e74c3c', '#2ecc71', '#f1c40f'],
+              borderColor: '#fff',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return value + '%';
+                  }
+                }
+              }
+            }
+          }
+        });
 
         const ctx2 = document.getElementById('trendChart').getContext('2d');
-        // new Chart(ctx2, {
-        //   type: 'line',
-        //   data: {
-        //     labels: gastos.map(gasto => gasto.fecha),
-        //     datasets: [{
-        //       label: 'Evolución de Gastos',
-        //       data: gastos.map(gasto => gasto.monto),
-        //       fill: false,
-        //       borderColor: '#2ecc71',
-        //       tension: 0.1
-        //     }]
-        //   },
-        //   options: {
-        //     scales: {
-        //       y: {
-        //         beginAtZero: true
-        //       }
-        //     }
-        //   }
-        // });
+        new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: gastos.map(gasto => gasto.fecha),
+            datasets: [{
+              label: 'Evolución de Gastos',
+              data: gastos.map(gasto => gasto.monto),
+              fill: false,
+              borderColor: '#2ecc71',
+              tension: 0.1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
       };
 
       onMounted(() => {
