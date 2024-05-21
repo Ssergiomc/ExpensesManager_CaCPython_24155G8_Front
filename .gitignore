@@ -11,3 +11,5 @@ jest/
 
 # Development server configuration
 devServer.config.js
+
+dev.nix
