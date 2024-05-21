@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AhorroFácil || Control de gastos</title>
+    <!-- Favicon general -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_abacus.png"/>
+    <link rel="icon" type="image/x-icon" href="/assets/images/Abacus_35794.ico"/>
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="/assets/images/apple-touch-icon.png"/>
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" id="theme-manifest" />
+    <!-- Tema para navegadores móviles -->
+    <meta name="theme-color" content="#49a7e9" />
+    <!-- Meta Tags for Search Engine Optimisation -->
+    <meta
+      name="description"
+      content="A short and engaging description of your webpage content that encourages clicks from search engine results."
+    />
+    <!-- Open Graph Tags / SOCIAL MEDIA -->
+    <meta property="og:title" content="AhorroFácil || Control de gastos" />
+    <meta
+      property="og:description"
+      content="Controla tus gastos familiares fácilmente con nuestra app. Regístrate y descubre cómo gestionar tus finanzas de manera efectiva. ¡Comienza hoy y toma el control de tus gastos!"
+    />
+    <meta
+      property="og:image"
+      content="/assets/images/extra/money-2724241_640.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://expensesmanagercacpython24155g8front.netlify.app/"
+    />
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:title" content="AhorroFácil || Control de gastos" />
+    <meta
+      name="twitter:description"
+      content="Controla tus gastos familiares fácilmente con nuestra app. Regístrate y descubre cómo gestionar tus finanzas de manera efectiva. ¡Comienza hoy y toma el control de tus gastos!"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="/assets/images/extra/money-2724241_640.jpg"
+    />
+    <!-- Canonical Tag -->
+    <link
+      rel="canonical"
+      href="https://expensesmanagercacpython24155g8front.netlify.app/"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- CHART.JS SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- VUE SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <!-- VUE ROUTER SCRIPT -->
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <!-- STYLE SHEETS -->
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/vue@3.2.46/dist/vue.global.prod.js"
+    ></script>
+  </head>
+
+  <body id="app">
+    <div class="main" :class="{ darktheme: isDarkMode }">
+      <appnavbar
+        :isDarkMode="isDarkMode"
+        :toggle-dark-mode="toggleDarkMode"
+      ></appnavbar>
+
+      <section class="app-section">
+        <router-view></router-view>
+      </section>
+
+      <appfooter></appfooter>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

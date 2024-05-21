@@ -1,0 +1,36 @@
+/** MAIN BASIC COMPONENTS **/
+
+a {
+  text-decoration: none;
+  color: var(--main-scheme-color);
+  cursor: pointer;
+  &:hover {
+    color: var(--toggle-link-hover-color);
+  }
+}
+
+.subtitle{
+  margin: 2rem auto 1rem;
+}
+
+.button-form{
+  cursor: pointer;
+  background-color: var(--main-scheme-color);
+  border: var(--toggle-button-mode-color) 1px solid;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  margin: auto;
+  padding: 0.5rem;
+  transition: background-color 0.7s ease;
+  &:hover{
+    background-color: var(--toggle-button-mode-color);
+    color: var(--toggle-button-mode-background);
+    border: var(--toggle-button-mode-background) 1px solid;
+  }
+}
+
+.error {
+  color: crimson;
+  font-size: 0.875em;
+  margin: 0.25rem 0;
+}

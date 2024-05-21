@@ -1,0 +1,42 @@
+@import 'main-variables.css';
+@import 'main-basic-components.css';
+/* Import component styles */
+@import 'components/navbar.css';
+@import 'components/footer.css';
+/* Import dynamic components pages */
+@import 'components/home.css';
+@import 'components/login.css';
+/* @import 'components/registro.css'; */
+@import 'components/dash.css';
+@import 'components/gasto.css';
+@import 'components/contacto.css';
+
+/*! Main Container APP **/
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body{
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/** MAIN SECTION **/
+.app-section {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/** MEDIA QUERIES BREAKPOINTS **/
+/* bootstrap-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+); */

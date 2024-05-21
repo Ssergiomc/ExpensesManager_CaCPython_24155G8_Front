@@ -1,0 +1,54 @@
+/** Seccion DASH **/
+
+.article-dash {
+    padding: 0 10%;
+    margin: 2rem 0 1rem 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .izquierda,
+    .derecha {
+        width: 50%;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        float: left;
+    }
+
+    @media (max-width: 700px) {
+        .izquierda,
+        .derecha {
+            width: 100%;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: var(--main-scheme-color);
+    }
+
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    li {
+        cursor: pointer;
+        list-style: none;
+        padding: 5px 0;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
