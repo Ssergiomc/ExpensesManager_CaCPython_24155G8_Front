@@ -1,0 +1,65 @@
+<article class='article-registro'>
+  <h1 class='title'>Registro de Usuario</h1>
+
+  <div class="registro-container">
+    <div class="body-container">
+      <form id="registroForm" novalidate @submit.prevent="submitRegisterForm">
+        <div class="contenedor-general">
+          <div class="contenedor-izquierdo">
+            <div class="input-group register">
+              <label for="nombre">Nombre</label>
+              <input v-model="registerFormData.nombre" type="text" id="nombre" class="form-control" name="nombre" required>
+            </div>
+            <div class="input-group register">
+              <label for="apellido">Apellido</label>
+              <input v-model="registerFormData.apellido" type="text" id="apellido" class="form-control" name="apellido" required>
+            </div>
+            <div class="input-group register">
+              <label for="mail">Mail</label>
+              <input v-model="registerFormData.mail" type="email" id="mail" class="form-control" name="mail" required>
+            </div>
+          </div>
+          <div class="contenedor-derecho">
+            <div class="input-group register">
+              <label for="clave">Clave</label>
+              <input v-model="registerFormData.clave" type="password" id="clave" class="form-control" name="clave" required>
+            </div>
+            <div class="input-group register">
+              <label for="repetirClave">Repetir Clave</label>
+              <input v-model="registerFormData.repetirClave" type="password" id="repetirClave" class="form-control" name="repetirClave" required>
+            </div>
+          </div>
+        </div>
+        <div class="input-group checkbox-register">
+          <input v-model="registerFormData.aceptarTerminos" type="checkbox" id="aceptar-terminos" required>
+          <p id="terminos-link" class='link-special' @click="mostrarModal()">Aceptar términos y condiciones</p>
+        </div>     
+        <button class='button-form' type="submit">Registrar</button>
+        <p class='register-account'>
+          ¿Ya tienes cuenta? <router-link to="/login"> Conéctate!</router-link>
+        </p>
+        
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <header class="modal-header">
+              <h2>Términos y Condiciones</h2>
+              <span class="close" @click="cerrarModal()">&times;</span>
+            </header>
+            <p class='modal-text'>Al usar esta aplicación, aceptas los siguientes términos y condiciones:</p>
+            <ul>
+              <li><strong>Uso personal:</strong> La app está diseñada para uso familiar y no comercial.</li>
+              <li><strong>Privacidad:</strong> Protegemos tu información personal. Consulta nuestra Política de privacidad para más detalles.</li>
+              <li><strong>Sin garantías:</strong> La app se ofrece "tal cual". No garantizamos su funcionamiento ininterrumpido o libre de errores.</li>
+              <li><strong>Responsabilidad limitada:</strong> No seremos responsables por ningún daño directo, indirecto, incidental o consecuente derivado del uso de la app.</li>
+              <li><strong>Cambios:</strong> Podemos modificar estos términos en cualquier momento. Te notificaremos de cualquier cambio significativo.</li>
+              <li><strong>Acuerdo completo:</strong> Estos términos constituyen el acuerdo completo entre tú y nosotros en relación con la app.</li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="image-container">
+      <img src="/assets/images/extra/control-gastos.png" alt="Imagen" class="imagen">
+    </div>
+  </div>
+</article>

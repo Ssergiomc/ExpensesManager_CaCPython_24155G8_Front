@@ -1,6 +1,6 @@
 /** MAIN BASIC COMPONENTS **/
 
-a {
+a, .link-special {
   text-decoration: none;
   color: var(--main-scheme-color);
   cursor: pointer;
@@ -33,4 +33,47 @@ a {
   color: crimson;
   font-size: 0.875em;
   margin: 0.25rem 0;
+}
+
+.input-group {
+  margin-bottom: 0.25rem;
+  align-items: center;
+  &.checkbox-register {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 1rem;
+  }
+  label{
+    min-width: 120px;
+    text-align: left;
+  }
+  &.register{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0.75rem 0;
+    input {
+      width: 100%;
+    }
+  }
+  input{
+    border-radius: 3px !important;
+  }
+  select{
+    position: relative;
+    flex: 1 1 auto;
+    height: 35px;
+    border: 1px solid #ced4da;
+    border-radius: 3px !important;
+    background-color: #ffffff;
+  }
+}
+@media screen and (min-width: 992px) {
+  .form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
 }
