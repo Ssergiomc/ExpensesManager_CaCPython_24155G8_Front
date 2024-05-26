@@ -16,7 +16,7 @@
     <!-- Meta Tags for Search Engine Optimisation -->
     <meta
       name="description"
-      content="A short and engaging description of your webpage content that encourages clicks from search engine results."
+      content="Controla tus gastos familiares fácilmente con nuestra app. Regístrate y descubre cómo gestionar tus finanzas de manera efectiva. ¡Comienza hoy y toma el control de tus gastos!"
     />
     <!-- Open Graph Tags / SOCIAL MEDIA -->
     <meta property="og:title" content="AhorroFácil || Control de gastos" />
@@ -74,14 +74,18 @@
 
   <body id="app">
     <div class="main" :class="{ darktheme: isDarkMode }">
-      <appnavbar
-        :isDarkMode="isDarkMode"
-        :toggle-dark-mode="toggleDarkMode"
-      ></appnavbar>
+      <header class='sticky-top'>
+        <appnavbar
+          :isDarkMode="isDarkMode"
+          :toggle-dark-mode="toggleDarkMode"
+        ></appnavbar>
+      </header>
 
-      <section class="app-section">
-        <router-view></router-view>
-      </section>
+      <main>
+        <section class="app-section">
+          <router-view></router-view>
+        </section>
+      </main>
 
       <appfooter></appfooter>
     </div>
