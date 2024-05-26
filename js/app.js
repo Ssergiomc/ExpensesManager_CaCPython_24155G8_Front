@@ -10,9 +10,9 @@ const loadFixedAppComponents = async (componentName) => {
   }
   // console.log(`Loaded template for -> ${componentName}`, response);
   return response.text()
-}
+};
 
-;(async () => {
+(async () => {
   const router = createRouter({
     history: createWebHistory(),
     routes: await Promise.all(
