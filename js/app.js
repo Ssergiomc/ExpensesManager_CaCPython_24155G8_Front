@@ -52,11 +52,13 @@ const loadFixedAppComponents = async (componentName) => {
     },
     methods: {
       toggleDarkMode() {
-        const manifest = document.getElementById('theme-manifest');
-        manifest.href = !this.isDarkMode ? "../manifest.json" : "../manifestdark.json";
+        const manifest = document.getElementById('theme-manifest')
+        manifest.href = !this.isDarkMode
+          ? '../manifest.json'
+          : '../manifestdark.json'
         if (typeof Storage !== 'undefined') {
           this.isDarkMode = !this.isDarkMode
-          localStorage.setItem('isDarkMode', this.isDarkMode.toString()) // Store the string representation
+          localStorage.setItem('isDarkMode', this.isDarkMode.toString())
         } else {
           console.error('Storage API is not supported in this browser')
           this.isDarkMode = !this.isDarkMode
@@ -68,7 +70,44 @@ const loadFixedAppComponents = async (componentName) => {
   app.config.devtools = true
   app.component('appnavbar', {
     template: navbarContent.template,
-    props: ['isDarkMode', 'toggleDarkMode'], // Asegúrate de definir las propiedades esperadas
+    props: ['isDarkMode', 'toggleDarkMode', 'closeNabvar'],
+    mounted() {
+      const navbarRef = this.$refs.navbarRef
+      if (!navbarRef) {
+        console.error(
+          'Navbar element not found! Ensure "ref="navbarRef"" is added to the navbar component.'
+        )
+        return
+      }
+      const clickOutside = (element, callback) => {
+        const outsideClickListener = (event) => {
+          if (!element.contains(event.target)) {
+            callback()
+          }
+        }
+
+        document.addEventListener('click', outsideClickListener)
+
+        return () => {
+          document.removeEventListener('click', outsideClickListener)
+        }
+      }
+
+      clickOutside(navbarRef, () => {
+        if (window.innerWidth < 768) {
+          const navTogglerButton = document.querySelector('.navbar-toggler');
+          const navbarMenu = document.querySelector('.show');
+          if (navTogglerButton && navbarMenu) {
+            navTogglerButton.classList.add('collapsed');
+            navTogglerButton.setAttribute('aria-expanded', 'false');
+            navbarMenu.classList.remove('show');
+          } 
+          // else {
+          //   console.error('Navbar toggler button not found!');
+          // }
+        }
+      })
+    },
   })
   app.component('appfooter', footerContent)
   app.mount('#app')
