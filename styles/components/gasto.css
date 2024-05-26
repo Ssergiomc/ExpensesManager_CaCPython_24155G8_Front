@@ -13,32 +13,6 @@
       display: flex;
       flex-direction: column;
     }
-    .input-group {
-      margin-bottom: 0.25rem;
-      align-items: center;
-      label{
-        min-width: 120px;
-        text-align: left;
-      }
-      input{
-        border-radius: 3px !important;
-      }
-      select{
-        position: relative;
-        flex: 1 1 auto;
-        height: 35px;
-        border: 1px solid #ced4da;
-        border-radius: 3px !important;
-        background-color: #ffffff;
-      }
-    }
-    @media screen and (min-width: 992px) {
-      .form-group {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-      }
-    }
   }
   
   .data-gasto{
