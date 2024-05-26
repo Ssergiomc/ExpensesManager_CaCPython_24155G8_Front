@@ -35,7 +35,7 @@ export const componentConfigs = {
   
         const submitForm = () => {
           if (validateForm()) {
-            console.log("%cForm Data: ","color: green", formData);
+            console.log("%cForm Data: ","color: green", Vue.toRaw(formData));
           }
         };
 
@@ -52,8 +52,7 @@ export const componentConfigs = {
   'Home': {
     // A simple home component might not need any reactive state
     message: `<div>Welcome Home!</div>`
-  }
-  ,
+  },
   'Dash': {
     setup() {
       const { ref, reactive, computed, onMounted } = Vue;
@@ -164,5 +163,108 @@ export const componentConfigs = {
 
       return { ultimosGastos, categorias, filtrarPorCategoria };
     }
-  }
+  },
+  'Registro': {
+    setup() {
+      const registerFormData = Vue.reactive({
+        nombre: '',
+        apellido: '',
+        mail: '',
+        clave: '',
+        repetirClave: '',
+        aceptarTerminos: '',
+      });
+
+      const displayErrorAlert = (keyObject, valueObject) => {
+
+        switch (keyObject) {
+          case 'nombre':
+          case 'apellido':
+          case 'clave':
+          case 'repetirClave':
+            if (valueObject === '') {
+              alert(`Campo: ${keyObject.toUpperCase()} - vacío. Todos los campos son obligatorios.`);
+              return false;
+            }
+            break;
+          case 'mail':
+            if (!valueObject.includes('@') || !valueObject.includes('.com')) {
+              alert(`El correo electrónico, debe contener '@' y '.com'`);
+              return false;
+            }
+            break;
+          case 'aceptarTerminos':
+            if (!valueObject) {
+              alert(`Debe aceptar los términos y condiciones`);
+              return false;
+            }
+            break;
+          default:
+            break;
+        }
+        return true;
+      }
+
+      const validarRegistroForm = () => {
+
+        const valuesArray = Object.values(registerFormData);
+        console.log("valuesArray", valuesArray);
+        if (valuesArray.every(value => value.trim() === '')) {
+          alert('Todos los campos son obligatorios.');
+          return false;
+        }
+
+        if (registerFormData.clave.length < 6) {
+          alert("La contraseña debe tener al menos 6 caracteres");
+          return false;
+        }
+
+        if (registerFormData.clave !== registerFormData.repetirClave) {
+          alert("Las contraseñas no coinciden");
+          return false;
+        }
+        
+        for (const keyForm in registerFormData) {
+          if (Object.hasOwnProperty.call(registerFormData, keyForm)) {
+            const fieldValue = registerFormData[keyForm];
+            if (!displayErrorAlert(keyForm, fieldValue)) {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+
+      const submitRegisterForm = () => {
+        if (validarRegistroForm()) {
+          console.log("%cForm Data Register: ","color: green", Vue.toRaw(registerFormData));
+        }
+      };
+
+      function mostrarModal() {
+        const modal = document.querySelectorAll(".modal")[0];
+        modal.classList.add('show');
+        const body = document.body;
+        body.style.overflow = 'hidden';
+      }
+      
+      function cerrarModal() {
+        const modal = document.querySelectorAll(".modal")[0];
+        modal.classList.remove('show');
+        const body = document.body;
+        body.style.overflow = 'auto';
+      }
+      
+      window.onclick = function(event) {
+        const modal = document.getElementById("myModal");
+        const body = document.body;
+        if (event.target == modal) {
+          modal.style.display = "none";
+          body.style.overflow = 'auto';
+        }
+      }
+
+      return { registerFormData, submitRegisterForm, mostrarModal, cerrarModal };    
+    }
+  },
 };
