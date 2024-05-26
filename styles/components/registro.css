@@ -1,0 +1,103 @@
+/** Seccion Registro **/
+
+.article-registro {
+  padding: 0 10%;
+  margin: 2rem 0 1rem 0;
+  .registro-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .body-container {
+    width: 50%;
+    border: 1px solid var(--toggle-button-mode-color);
+    border-radius: 5px;
+    padding: 20px;
+    flex: 3;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenedor-general {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  
+    .contenedor-izquierdo,
+    .contenedor-derecho {
+      padding: 0.5rem;
+      flex: 1;
+    }
+  }
+
+  #aceptar-terminos {
+    margin-right: 1rem;
+  }
+
+  .register-account {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .image-container {
+    display: flex;
+    .imagen {
+      flex: 2;
+      max-width: 100%;
+      height: auto;
+      margin-left: 5rem;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .imagen {
+        display: none;
+      }
+    }
+  }
+
+  /* Modal Terms and Conditions */
+  .modal {
+    z-index: 1;    
+    background-color: var(--main-modals-background);
+    transition: display 0.5s ease-in-out;
+  }
+
+  .modal.show {
+    display: block !important;
+  }
+
+
+  .modal-content {
+    background-color: var(--background-color);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--main-modals-border);
+    width: 80%;
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .close {
+      color: var(--toggle-button-mode-color);
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: black;
+        text-decoration: none;
+      }
+    }
+    .modal-text {
+      margin-top: 1rem;
+    }
+  }  
+}

@@ -4,6 +4,9 @@
 :root {
   --main-scheme-color: #49a7e9;
   --main-highlight-color: goldenrod;
+  --main-modals-background: rgba(0,0,0,0.4);
+  --main-modals-border: #888;
+
   --background-color: #ffffff;
   --text-color: #000000;
   --toggle-text-home: goldenrod;
