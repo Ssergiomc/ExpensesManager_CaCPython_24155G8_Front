@@ -8,8 +8,6 @@ nav{
     align-items: end;
     img{
       cursor: pointer;
-      width: 32px; 
-      height: 32px;
     }
     span{
       text-transform: uppercase;
