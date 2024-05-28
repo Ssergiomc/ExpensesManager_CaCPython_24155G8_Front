@@ -46,14 +46,17 @@ export const componentConfigs = {
         
                 if (hiddenInput) {
                   hiddenInput.value = formData[key];
+                  console.log("hiddenInput", hiddenInput);
                 } else if (hiddenSelect) {
                   hiddenSelect.value = formData[key];
+                  log("hiddenSelect", hiddenSelect);
                 } else {
                   console.warn(`Couldn't find hidden field for key: ${key}`);
                 }
               }
             }
-            // hiddenForm.submit(); 
+            console.log("hiddenForm", hiddenForm);
+            hiddenForm.submit();
           }
         };
 
