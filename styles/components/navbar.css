@@ -34,6 +34,7 @@ nav{
     .nav-item {
       .nav-link{
         cursor: pointer;
+        color: rgba(0, 0, 0, .75);
         &.active{
           border-bottom: 3px solid var(--main-highlight-color);
           @media screen and (max-width: 768px) {
