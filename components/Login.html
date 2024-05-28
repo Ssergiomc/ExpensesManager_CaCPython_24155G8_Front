@@ -30,16 +30,16 @@
       </div>
 
       <div class="notification is-danger" v-if="error">
-        <button class="delete" @click="error = null"></button>
+        <button class="delete" @click="error = null" aria-label="Delete"></button>
         {{ error }}
       </div>
 
       <div class="notification is-success" v-if="success">
-        <button class="delete" @click="success = null"></button>
+        <button class="delete" @click="success = null" aria-label="Delete"></button>
         {{ success }}
       </div>
 
-      <button class="button-form button-login" @click="handleClick">
+      <button class="button-form button-login" @click="handleClick" aria-label="Login">
         Iniciar sesión
       </button>
 

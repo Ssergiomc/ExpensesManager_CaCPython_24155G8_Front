@@ -34,7 +34,7 @@
           <input v-model="registerFormData.aceptarTerminos" type="checkbox" id="aceptar-terminos" required>
           <p id="terminos-link" class='link-special' @click="mostrarModal()">Aceptar términos y condiciones</p>
         </div>     
-        <button class='button-form' type="submit">Registrar</button>
+        <button class='button-form' type="submit" aria-label="Register">Registrar</button>
         <p class='register-account'>
           ¿Ya tienes cuenta? <router-link to="/login"> Conéctate!</router-link>
         </p>
@@ -59,7 +59,7 @@
       </form>
     </div>
     <div class="image-container">
-      <img src="/assets/images/extra/control-gastos.png" alt="Imagen" class="imagen">
+      <img src="/assets/images/extra/control-gastos.webp" alt="Image expenses register" class="imagen">
     </div>
   </div>
 </article>

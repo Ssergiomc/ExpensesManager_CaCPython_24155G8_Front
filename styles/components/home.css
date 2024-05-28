@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('/assets/images/extra/coins-1726618_1280.jpg');
+    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('/assets/images/extra/coins-1726618_1280.webp');
     background-size: cover;
     background-position: center;
     height: 92vh !important;
@@ -32,7 +32,7 @@
       height: auto;
     }
     .home-image-left {
-      background: url('/assets/images/extra/money-2724241_640.jpg');
+      background: url('/assets/images/extra/money-2724241_640.webp');
       background-size: 95%;
       background-position: center;
       background-repeat: no-repeat;
@@ -66,7 +66,7 @@
       }
     }
     .home-image-right{
-      background: url('/assets/images/extra/team-spirit-2447163_640.jpg');
+      background: url('/assets/images/extra/team-spirit-2447163_640.webp');
       background-size: 95%;
       background-position: center;
       background-repeat: no-repeat;
