@@ -25,6 +25,10 @@ export const componentConfigs = {
           name: '',
           cost: ''
         });
+
+        const handleFileChange = (event) => {
+          formData.ticket = event.target.files[0];
+        };        
   
         const validateForm = () => {
           console.log("%cValidating form...", "color: orange");
@@ -37,30 +41,28 @@ export const componentConfigs = {
           if (validateForm()) {
             console.log("%cForm Data: ","color: green", Vue.toRaw(formData));
             const hiddenForm = document.querySelector('#hidden-form');
-            // const hiddenNameInput = hiddenForm.querySelector('input[name="name"]');
-            // hiddenNameInput.value = formData.name;
-            for (const key in formData) {
-              if (formData.hasOwnProperty(key)) {
-                const hiddenInput = hiddenForm.querySelector(`input[name="${key}"]`);
-                const hiddenSelect = hiddenForm.querySelector(`select[name="${key}"]`);
-        
-                if (hiddenInput) {
-                  hiddenInput.value = formData[key];
-                  console.log("hiddenInput", hiddenInput);
-                } else if (hiddenSelect) {
-                  hiddenSelect.value = formData[key];
-                  log("hiddenSelect", hiddenSelect);
+            
+            Object.keys(formData).forEach(key => {
+              const hiddenInput = hiddenForm.querySelector(`[name="${key}"]`);
+              if (hiddenInput) {
+                if (hiddenInput.type === 'file') {
+                  const dataTransfer = new DataTransfer();
+                  dataTransfer.items.add(formData[key]);
+                  hiddenInput.files = dataTransfer.files;
                 } else {
-                  console.warn(`Couldn't find hidden field for key: ${key}`);
+                  hiddenInput.value = formData[key];
                 }
+              } else {
+                console.warn(`Couldn't find hidden field for key: ${key}`);
               }
-            }
+            });
+
             console.log("hiddenForm", hiddenForm);
             hiddenForm.submit();
           }
         };
 
-        return { formData, errors, submitForm };
+        return { formData, errors, submitForm, handleFileChange };
     }
   },
   'Contacto': {
