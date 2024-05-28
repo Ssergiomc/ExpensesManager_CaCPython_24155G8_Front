@@ -36,7 +36,7 @@ export const componentConfigs = {
         const submitForm = () => {
           if (validateForm()) {
             console.log("%cForm Data: ","color: green", Vue.toRaw(formData));
-            // const hiddenForm = document.querySelector('#hidden-form');
+            const hiddenForm = document.querySelector('#hidden-form');
             // const hiddenNameInput = hiddenForm.querySelector('input[name="name"]');
             // hiddenNameInput.value = formData.name;
             for (const key in formData) {
