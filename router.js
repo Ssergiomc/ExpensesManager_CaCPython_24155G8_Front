@@ -38,7 +38,9 @@ const routes = [
   { path: '/dashboard', component: () => createComponent('Dash') },
   { path: '/gasto', component: () => createComponent('Gasto') },
   { path: '/contacto', component: () => createComponent('Contacto') },
-  { path: '/test', component: () => createComponent('Test') },
+  { path: '/form/success', component: () => createComponent('FormSuccess') },
+  // { path: '/test', component: () => createComponent('Test') },
+  // { path: '/(*)', component: () => createComponent('ErrorPage')}
   // { path: '/:pathMatch(.*)*', component: () =>  createComponent('ErrorPage')}
 ];
 
