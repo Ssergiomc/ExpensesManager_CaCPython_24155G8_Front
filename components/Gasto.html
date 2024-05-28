@@ -1,6 +1,6 @@
 <article class="article-gasto">
   <h1 class="title">Gasto</h1>
-  <form class="form-gasto" validate @submit.prevent="submitForm">
+  <form class="form-gasto" validate @submit.prevent="submitForm" name="expense" action="/success" method="POST" data-netlify="true">
     <fieldset>
       <legend>Introducir gasto</legend>
       <div class="form-group">
