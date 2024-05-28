@@ -1,20 +1,18 @@
+# Permite a todos los user-agents rastrear todo excepto lo especificado
 User-agent: *
 Disallow: /private/
 Disallow: /admin/
-
-# Especifica la ubicación del sitemap
-Sitemap: https://expensesmanagercacpython24155g8front.netlify.app/sitemap.xml
+Disallow: /secret/
+Allow: /secret/public.html
 
 # Retrasa el rastreo de los motores de búsqueda para evitar sobrecargar el servidor
 Crawl-delay: 10
 
+# Especifica la ubicación del sitemap
+Sitemap: https://expensesmanagercacpython24155g8front.netlify.app/sitemap.xml
+
 # Especifica el dominio preferido para el rastreo
 Host: https://expensesmanagercacpython24155g8front.netlify.app
-
-# Bloquea todos los rastreadores de un directorio específico, pero permite un archivo
-User-agent: *
-Disallow: /secret/
-Allow: /secret/public.html
 
 # Bloquea un rastreador específico
 User-agent: BadBot
