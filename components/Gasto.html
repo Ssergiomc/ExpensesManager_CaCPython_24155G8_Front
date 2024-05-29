@@ -4,7 +4,7 @@
   <form id="hidden-form" name="expense-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="display: none;">
     <div class="form-group">
       <input type="text" name="name" />
-      <input type="text" name="description" />
+      <input type="text" name="product" />
       <input type="number" name="cost" min="0" />
       <input type="date" name="date" />
       <select name="category">
@@ -45,13 +45,13 @@
           <small v-if="errors.name" class="error">{{ errors.name }}</small>
         </div>
         <div class="input-group">
-          <label for="description">Descripción</label>
+          <label for="product">Producto</label>
           <input
-            v-model="formData.description"
+            v-model="formData.product"
             type="text"
             class="form-control"
-            id="description"
-            name="description"
+            id="product"
+            name="product"
             placeholder="Zapatos"
             required
           />
@@ -113,7 +113,7 @@
       <thead>
         <tr>
           <th scope="col">Nombre</th>
-          <th scope="col">Descripción</th>
+          <th scope="col">Producto</th>
           <th scope="col">Categoría</th>
           <th scope="col">Coste</th>
           <th scope="col">Pago</th>
@@ -177,7 +177,7 @@
           >
             <option value="0" selected>Últimos</option>
             <option value="1">Nombre</option>
-            <option value="2">Descripción</option>
+            <option value="2">Producto</option>
             <option value="3">Coste</option>
             <option value="4">Fecha</option>
           </select>

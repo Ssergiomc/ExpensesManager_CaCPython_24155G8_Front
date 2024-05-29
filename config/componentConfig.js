@@ -12,11 +12,10 @@ export const componentConfigs = {
   'Gasto': {
     setup() {
       const { reactive, toRaw } = Vue;
-      const { useRouter } = VueRouter;
 
       const formData = reactive({
         name: '',
-        description: '',
+        product: '',
         cost: '',
         date: '',
         category: '0',
@@ -41,15 +40,13 @@ export const componentConfigs = {
         return !errors.name && !errors.cost
       }
 
-      const router = useRouter();
-
       const submitForm = () => {
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', toRaw(formData));
           const hiddenForm = document.querySelector('#hidden-form');
       
           hiddenForm.querySelector('input[name="name"]').value = formData.name;
-          hiddenForm.querySelector('input[name="description"]').value = formData.description;
+          hiddenForm.querySelector('input[name="product"]').value = formData.product;
           hiddenForm.querySelector('input[name="cost"]').value = formData.cost;
           hiddenForm.querySelector('input[name="date"]').value = formData.date;
           hiddenForm.querySelector('select[name="category"]').value = formData.category;
@@ -64,7 +61,7 @@ export const componentConfigs = {
 
           console.log('hiddenForm - ', hiddenForm);
           hiddenForm.submit();
-          router.push('/formsuccess');
+          window.location.href = "/formsuccess";
         }
       }
 
