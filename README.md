@@ -6,14 +6,15 @@ Family expenses manager
 <a href="https://expensesmanagercacpython24155g8front.netlify.app/" target="_blank">Pruebame online / Click to try me online</a>
 
 ## Table of contents
-- [Description](#description)
-- [Technologies](#technologies)
-- [Install](#install)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Questions](#questions)
-- [Deploy](#deploy)
+- [Description](#-description)
+- [Technologies](#-technologies)
+- [Screenshoots](#-screenshoots)
+- [Install](#-install)
+- [Usage](#-usage)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Questions](#-questions)
+- [Deploy](#-deploy)
 
 ## 🟦 Description
 
@@ -34,7 +35,9 @@ Our expense tracker family app provides a seamless solution for managing expense
     - The app allows users to upload pictures of receipts, enhancing accuracy and organization.
   
     🟢 **Expenses - Form Validation**: *(ADDED)*
-    - There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
+    - Form Validation: There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
+    - Update: Form managed by built-in form detection provided by Netlify this feature simplifies the process of adding and managing forms. This eliminates the need for extra API calls or additional JavaScript. Once enabled, Netlify's build system automatically parses your HTML at deploy time, so there's no need for you to make an API call or include extra JavaScript on your site. The data provided by form is accessible on Netlify and can be exported to CSV.
+    - Redirect Success: After Form submission there will be a redirect to a success page that displays a random picture on the background (there are 5).
   
     🔷 **Dashboard**: *(DISPLAY RANDOM DATA)*
     - Users can visualize their financial data through an intuitive dashboard, providing insights into spending patterns and trends.
@@ -55,17 +58,20 @@ Our expense tracker family app provides a seamless solution for managing expense
     🔶 **Profile Management**: *(TO BE ADDED)*
     - Users can manage their personal information and preferences within the app, ensuring a tailored experience.
   
-    🔷 **Contact**: *(ADDED)*
+    🟢  **Contact**: *(ADDED)*
     - This section displays an iframe map from the Google Maps.
   
-    🔷 **Theme Mode Control**: *(ADDED)*
+    🟢  **Theme Mode Control**: *(ADDED)*
     - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience.
   
-    🔷 **Responsive Design**: *(ADDED)*
+    🟢  **Responsive Design**: *(ADDED)*
     - With responsiveness built-in, the app adapts seamlessly to different screen sizes and devices, ensuring accessibility for all users.
   
-    🔷 **Burger Menu**: *(ADDED)*
-    - A burger menu is incorporated for iproved navigation on smaller screens, enhancing usability and convenience. 
+    🟢  **Burger Menu**: *(ADDED)*
+    - A burger menu is incorporated for iproved navigation on smaller screens, enhancing usability and convenience.
+  
+    🟢  **Error Route**: *(ADDED)*
+    - Case the user access a route that does not exist the ErrorPage component will be displayed which background is also a random image among 5 options.
 
 Overall, the app combines robust functionality, user-friendly design, and seamless accessibility to provide an efficient and enjoyable expense tracking experience for families.
 
@@ -83,6 +89,16 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=101010)
 
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=00C7B7&labelColor=101010)
+
+## 🟦 Screenshoots
+![Register](/assets/images/screenshots/register.png){:width="100px"}
+![Dashboard](/assets/images/screenshots/dash.png){:width="100px"}
+![Gasto_light](/assets/images/screenshots/gasto_light.png){:width="100px"}
+![Gasto_dark](/assets/images/screenshots/gasto_dark.png){:width="100px"}
+![SuccessForm](/assets/images/screenshots/successform.png){:width="100px"}
+![ErrorPage](/assets/images/screenshots/errorpage.png){:width="100px"}
+![Responsive](/assets/images/screenshots/responsive.png){:width="100px"}
+![Stats](/assets/images/screenshots/stats.png){:width="100px"}
 
 ## 🟦 Install
 - Download the project
