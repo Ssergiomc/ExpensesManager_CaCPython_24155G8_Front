@@ -19,7 +19,7 @@ const loadFixedAppComponents = async (componentName) => {
       routes.map(async (route) => ({
         path: route.path,
         component: route.component ? route.component() : undefined,
-      })).concat({ path: '/:pathMatch(.*)*', redirect: '/errorPage' })
+      })).concat({ path: '/:pathMatch(.*)*', redirect: '/404' })
     ),
   });
 
