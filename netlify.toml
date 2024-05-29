@@ -1,0 +1,40 @@
+[[redirects]]
+  from = "/login"
+  to = "/login"
+  status = 200
+
+[[redirects]]
+  from = "/registro"
+  to = "/registro"
+  status = 200
+
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard"
+  status = 200
+
+
+[[redirects]]
+  from = "/gasto"
+  to = "/gasto"
+  status = 200
+
+
+[[redirects]]
+  from = "/contacto"
+  to = "/contacto"
+  status = 200
+
+
+[[redirects]]
+  from = "/form/success"
+  to = "/form/success"
+  status = 200
+
+
+[[redirects]]
+  from = "/*"
+  to = "/errorPage"
+  status = 404
+  force = true
