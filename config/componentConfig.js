@@ -40,32 +40,15 @@ export const componentConfigs = {
 
       const submitForm = () => {
         if (validateForm()) {
-          console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData))
-          const hiddenForm = document.querySelector('#hidden-form')
-          console.log('hiddenForm -1-', hiddenForm)
-
-          // Object.keys(formData).forEach(key => {
-          //   const hiddenInput = hiddenForm.querySelector(`[name="${key}"]`);
-          //   if (hiddenInput) {
-          //     if (hiddenInput.type === 'file') {
-          //       const dataTransfer = new DataTransfer();
-          //       dataTransfer.items.add(formData[key]);
-          //       hiddenInput.files = dataTransfer.files;
-          //     } else {
-          //       hiddenInput.value = formData[key];
-          //     }
-          //   } else {
-          //     console.warn(`Couldn't find hidden field for key: ${key}`);
-          //   }
-          // });
-
-          hiddenForm.querySelector('input[name="name"]').value = formData.name
-          hiddenForm.querySelector('input[name="description"]').value = formData.description
-          hiddenForm.querySelector('input[name="cost"]').value = formData.cost
-          hiddenForm.querySelector('input[name="date"]').value = formData.date
-          hiddenForm.querySelector('select[name="category"]').value = formData.category
-          hiddenForm.querySelector('select[name="paymentType"]').value = formData.paymentType
-          console.log('hiddenForm -2-', hiddenForm)
+          console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData));
+          const hiddenForm = document.querySelector('#hidden-form');
+      
+          hiddenForm.querySelector('input[name="name"]').value = formData.name;
+          hiddenForm.querySelector('input[name="description"]').value = formData.description;
+          hiddenForm.querySelector('input[name="cost"]').value = formData.cost;
+          hiddenForm.querySelector('input[name="date"]').value = formData.date;
+          hiddenForm.querySelector('select[name="category"]').value = formData.category;
+          hiddenForm.querySelector('select[name="paymentType"]').value = formData.paymentType;
 
           if (formData.ticket) {
             const fileInput = hiddenForm.querySelector('input[name="ticket"]');
@@ -74,8 +57,8 @@ export const componentConfigs = {
             fileInput.files = dataTransfer.files;
           }
 
-          console.log('hiddenForm -3-', hiddenForm)
-          hiddenForm.submit()
+          console.log('hiddenForm - ', hiddenForm);
+          hiddenForm.submit();
         }
       }
 
@@ -84,13 +67,11 @@ export const componentConfigs = {
   },
   'Contacto': {
     setup() {
-      // Possibly some other reactive data or methods
       const message = Vue.ref('Welcome to the Contacto page!')
       return { message }
     },
   },
   'Home': {
-    // A simple home component might not need any reactive state
     message: `<div>Welcome Home!</div>`,
   },
   'Dash': {
@@ -315,11 +296,7 @@ export const componentConfigs = {
 
       const submitRegisterForm = () => {
         if (validarRegistroForm()) {
-          console.log(
-            '%cForm Data Register: ',
-            'color: green',
-            Vue.toRaw(registerFormData)
-          )
+          console.log('%cForm Data Register: ', 'color: green', Vue.toRaw(registerFormData));
         }
       }
 
@@ -347,6 +324,43 @@ export const componentConfigs = {
       }
 
       return { registerFormData, submitRegisterForm, mostrarModal, cerrarModal }
+    },
+  },
+  'ErrorPage': {
+    setup() {
+      const images = [
+        'url("../assets/images/extra/animal-8769612_1280.webp")',
+        'url("../assets/images/extra/pexels-goumbik-928184.webp")',
+        'url("../assets/images/extra/pexels-john-guccione-www-advergroup-com-1874301-3531895.webp")',
+        'url("../assets/images/extra/pexels-karolina-grabowska-4497591.webp")',
+      ];
+  
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      const gradient = 'linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6))';
+
+      const gradientBackground = `${gradient}, ${randomImage}`;
+      console.log('gradientBackground', gradientBackground);
+  
+      return { gradientBackground }
+    },
+  },
+  'FormSuccess': {
+    setup() {
+      const images = [
+        'url("../assets/images/extra/architecture-1868667_1280.webp")',
+        'url("../assets/images/extra/city-4991094_1280.webp")',
+        'url("../assets/images/extra/landscape-2130524_1280.webp")',
+        'url("../assets/images/extra/lightning-6383992_1280.webp")',
+        'url("../assets/images/extra/rainbow-4047523_1280.webp")',
+      ];
+  
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      const gradient = 'linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6))';
+
+      const gradientBackground = `${gradient}, ${randomImage}`;
+      console.log('gradientBackground', gradientBackground);
+  
+      return { gradientBackground }
     },
   },
 }
