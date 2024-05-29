@@ -38,8 +38,8 @@ const routes = [
   { path: '/dashboard', component: () => createComponent('Dash') },
   { path: '/gasto', component: () => createComponent('Gasto') },
   { path: '/contacto', component: () => createComponent('Contacto') },
-  { path: '/form-success', component: () => createComponent('FormSuccess') },
-  { path: '/errorPage', component: () => createComponent('ErrorPage')},
+  { path: '/formsuccess', component: () => createComponent('FormSuccess') },
+  { path: '/404', component: () => createComponent('ErrorPage')},
   { path: '/test', component: () => createComponent('Test') },
   // { path: '/:pathMatch(.*)*', component: () =>  createComponent('ErrorPage')}
 ];
