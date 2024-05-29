@@ -11,7 +11,10 @@ export const componentConfigs = {
   },
   'Gasto': {
     setup() {
-      const formData = Vue.reactive({
+      const { reactive, toRaw } = Vue;
+      const { useRouter } = VueRouter;
+
+      const formData = reactive({
         name: '',
         description: '',
         cost: '',
@@ -21,7 +24,7 @@ export const componentConfigs = {
         ticket: null,
       })
 
-      const errors = Vue.reactive({
+      const errors = reactive({
         name: '',
         cost: '',
       })
@@ -38,9 +41,11 @@ export const componentConfigs = {
         return !errors.name && !errors.cost
       }
 
+      const router = useRouter();
+
       const submitForm = () => {
         if (validateForm()) {
-          console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData));
+          console.log('%cForm Data: ', 'color: green', toRaw(formData));
           const hiddenForm = document.querySelector('#hidden-form');
       
           hiddenForm.querySelector('input[name="name"]').value = formData.name;
@@ -59,6 +64,7 @@ export const componentConfigs = {
 
           console.log('hiddenForm - ', hiddenForm);
           hiddenForm.submit();
+          router.push('/formsuccess');
         }
       }
 
@@ -329,10 +335,11 @@ export const componentConfigs = {
   'ErrorPage': {
     setup() {
       const images = [
-        'url("../assets/images/extra/animal-8769612_1280.webp")',
-        'url("../assets/images/extra/pexels-goumbik-928184.webp")',
-        'url("../assets/images/extra/pexels-john-guccione-www-advergroup-com-1874301-3531895.webp")',
-        'url("../assets/images/extra/pexels-karolina-grabowska-4497591.webp")',
+        'url("../assets/images/extra/architecture-1868667_1280.webp")',
+        'url("../assets/images/extra/city-4991094_1280.webp")',
+        'url("../assets/images/extra/landscape-2130524_1280.webp")',
+        'url("../assets/images/extra/lightning-6383992_1280.webp")',
+        'url("../assets/images/extra/rainbow-4047523_1280.webp")',
       ];
   
       const randomImage = images[Math.floor(Math.random() * images.length)];
@@ -347,18 +354,17 @@ export const componentConfigs = {
   'FormSuccess': {
     setup() {
       const images = [
-        'url("../assets/images/extra/architecture-1868667_1280.webp")',
-        'url("../assets/images/extra/city-4991094_1280.webp")',
-        'url("../assets/images/extra/landscape-2130524_1280.webp")',
-        'url("../assets/images/extra/lightning-6383992_1280.webp")',
-        'url("../assets/images/extra/rainbow-4047523_1280.webp")',
+        'url("../assets/images/extra/animal-8769612_1280.webp")',
+        'url("../assets/images/extra/pexels-goumbik-928184.webp")',
+        'url("../assets/images/extra/pexels-john-guccione-www-advergroup-com-1874301-3531895.webp")',
+        'url("../assets/images/extra/pexels-karolina-grabowska-4497591.webp")',
+        'url("../assets/images/extra//assets/images/extra/money-2724241_640.webp")',
       ];
   
       const randomImage = images[Math.floor(Math.random() * images.length)];
       const gradient = 'linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6))';
 
       const gradientBackground = `${gradient}, ${randomImage}`;
-      console.log('gradientBackground', gradientBackground);
   
       return { gradientBackground }
     },
