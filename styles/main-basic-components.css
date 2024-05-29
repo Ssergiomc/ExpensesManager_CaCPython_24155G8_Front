@@ -77,3 +77,59 @@ a, .link-special {
     grid-gap: 1rem;
   }
 }
+
+.article-error{
+  .img-error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 82vh !important;
+  }
+  .error-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1, h2, p{
+      color: var(--toggle-text-home);
+      @media screen and (max-width: 576px) {
+        text-align: center;
+      }
+    }
+    a{
+      color: var(--main-scheme-color);
+      &:hover{
+        color: var(--toggle-link-hover-color);
+      }
+    }
+  }
+}
+
+.article-form-success {
+  .img-form-success{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 82vh !important;
+  }
+  .form-success-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1, h2{
+      color: var(--toggle-text-home);
+      @media screen and (max-width: 576px) {
+        text-align: center;
+      }
+    }
+    a{
+      color: var(--main-scheme-color);
+      &:hover{
+        color: var(--toggle-link-hover-color);
+      }
+    }
+  }
+}
