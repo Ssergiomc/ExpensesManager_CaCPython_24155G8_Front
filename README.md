@@ -91,14 +91,14 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=00C7B7&labelColor=101010)
 
 ## 🟦 Screenshoots
-![Register](/assets/images/screenshots/register.png){:width="100px"}
-![Dashboard](/assets/images/screenshots/dash.png){:width="100px"}
-![Gasto_light](/assets/images/screenshots/gasto_light.png){:width="100px"}
-![Gasto_dark](/assets/images/screenshots/gasto_dark.png){:width="100px"}
-![SuccessForm](/assets/images/screenshots/successform.png){:width="100px"}
-![ErrorPage](/assets/images/screenshots/errorpage.png){:width="100px"}
-![Responsive](/assets/images/screenshots/responsive.png){:width="100px"}
-![Stats](/assets/images/screenshots/stats.png){:width="100px"}
+<img src="assets/images/screenshots/register.png" alt="Register" style="width:500px;">
+<img src="assets/images/screenshots/dash.png" alt="Dashboard" style="width:500px;">
+<img src="assets/images/screenshots/gasto_light.png" alt="Gasto_light" style="width:500px;">
+<img src="assets/images/screenshots/gasto_dark.png" alt="Gasto_dark" style="width:500px;">
+<img src="assets/images/screenshots/successform.png" alt="SuccessForm" style="width:500px;">
+<img src="assets/images/screenshots/errorpage.png" alt="ErrorPage" style="width:500px;">
+<img src="assets/images/screenshots/responsive.png" alt="Responsive" style="height:500px;">
+<img src="assets/images/screenshots/stats.png" alt="Stats" style="width:500px;">
 
 ## 🟦 Install
 - Download the project
