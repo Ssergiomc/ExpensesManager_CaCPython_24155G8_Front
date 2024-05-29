@@ -2,146 +2,199 @@
 export const componentConfigs = {
   'Test': {
     setup() {
-      const count = Vue.ref(0);
+      const count = Vue.ref(0)
       const handleClick = () => {
-        count.value++;
-      };
-      return { count, handleClick };
-    }
+        count.value++
+      }
+      return { count, handleClick }
+    },
   },
   'Gasto': {
-    setup() {      
+    setup() {
       const formData = Vue.reactive({
-          name: '',
-          description: '',
-          cost: '',
-          date: '',
-          category: '0',
-          paymentType: '1',
-          ticket: null,
-        });
+        name: '',
+        description: '',
+        cost: '',
+        date: '',
+        category: '0',
+        paymentType: '1',
+        ticket: null,
+      })
 
-        const errors = Vue.reactive({
-          name: '',
-          cost: ''
-        });
+      const errors = Vue.reactive({
+        name: '',
+        cost: '',
+      })
 
-        const handleFileChange = (event) => {
-          formData.ticket = event.target.files[0];
-        };        
-  
-        const validateForm = () => {
-          console.log("%cValidating form...", "color: orange");
-          errors.name = formData.name ? '' : 'El nombre es requerido.';
-          errors.cost = formData.cost > 0 ? '' : 'El coste debe ser mayor que cero.';
-          return !errors.name && !errors.cost;
-        };
-  
-        const submitForm = () => {
-          if (validateForm()) {
-            console.log("%cForm Data: ","color: green", Vue.toRaw(formData));
-            const hiddenForm = document.querySelector('#hidden-form');
-            
-            Object.keys(formData).forEach(key => {
-              const hiddenInput = hiddenForm.querySelector(`[name="${key}"]`);
-              if (hiddenInput) {
-                if (hiddenInput.type === 'file') {
-                  const dataTransfer = new DataTransfer();
-                  dataTransfer.items.add(formData[key]);
-                  hiddenInput.files = dataTransfer.files;
-                } else {
-                  hiddenInput.value = formData[key];
-                }
-              } else {
-                console.warn(`Couldn't find hidden field for key: ${key}`);
-              }
-            });
+      const handleFileChange = (event) => {
+        formData.ticket = event.target.files[0]
+      }
 
-            console.log("hiddenForm", hiddenForm);
-            hiddenForm.submit();
+      const validateForm = () => {
+        console.log('%cValidating form...', 'color: orange')
+        errors.name = formData.name ? '' : 'El nombre es requerido.'
+        errors.cost =
+          formData.cost > 0 ? '' : 'El coste debe ser mayor que cero.'
+        return !errors.name && !errors.cost
+      }
+
+      const submitForm = () => {
+        if (validateForm()) {
+          console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData))
+          const hiddenForm = document.querySelector('#hidden-form')
+          console.log('hiddenForm -1-', hiddenForm)
+
+          // Object.keys(formData).forEach(key => {
+          //   const hiddenInput = hiddenForm.querySelector(`[name="${key}"]`);
+          //   if (hiddenInput) {
+          //     if (hiddenInput.type === 'file') {
+          //       const dataTransfer = new DataTransfer();
+          //       dataTransfer.items.add(formData[key]);
+          //       hiddenInput.files = dataTransfer.files;
+          //     } else {
+          //       hiddenInput.value = formData[key];
+          //     }
+          //   } else {
+          //     console.warn(`Couldn't find hidden field for key: ${key}`);
+          //   }
+          // });
+
+          hiddenForm.querySelector('input[name="name"]').value = formData.name
+          hiddenForm.querySelector('input[name="description"]').value = formData.description
+          hiddenForm.querySelector('input[name="cost"]').value = formData.cost
+          hiddenForm.querySelector('input[name="date"]').value = formData.date
+          hiddenForm.querySelector('select[name="category"]').value = formData.category
+          hiddenForm.querySelector('select[name="paymentType"]').value = formData.paymentType
+          console.log('hiddenForm -2-', hiddenForm)
+
+          if (formData.ticket) {
+            const fileInput = hiddenForm.querySelector('input[name="ticket"]');
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(formData.ticket);
+            fileInput.files = dataTransfer.files;
           }
-        };
 
-        return { formData, errors, submitForm, handleFileChange };
-    }
+          console.log('hiddenForm -3-', hiddenForm)
+          hiddenForm.submit()
+        }
+      }
+
+      return { formData, errors, submitForm, handleFileChange }
+    },
   },
   'Contacto': {
     setup() {
       // Possibly some other reactive data or methods
-      const message = Vue.ref("Welcome to the Contacto page!");
-      return { message };
-    }
+      const message = Vue.ref('Welcome to the Contacto page!')
+      return { message }
+    },
   },
   'Home': {
     // A simple home component might not need any reactive state
-    message: `<div>Welcome Home!</div>`
+    message: `<div>Welcome Home!</div>`,
   },
   'Dash': {
     setup() {
-      const { ref, reactive, computed, onMounted } = Vue;
+      const { ref, reactive, computed, onMounted } = Vue
 
-      const gastos = reactive([]);
-      const categorias = ['Comida', 'Transporte', 'Entretenimiento', 'Hogar', 'Otros'];
+      const gastos = reactive([])
+      const categorias = [
+        'Comida',
+        'Transporte',
+        'Entretenimiento',
+        'Hogar',
+        'Otros',
+      ]
 
-      const fechaActual = new Date();
-      const fechaInicio = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), 1);
-      const fechaFin = new Date(fechaActual.getFullYear(), fechaActual.getMonth() + 1, 0);
+      const fechaActual = new Date()
+      const fechaInicio = new Date(
+        fechaActual.getFullYear(),
+        fechaActual.getMonth(),
+        1
+      )
+      const fechaFin = new Date(
+        fechaActual.getFullYear(),
+        fechaActual.getMonth() + 1,
+        0
+      )
 
-      const diasEnMes = (fechaFin.getDate() - fechaInicio.getDate()) + 1;
+      const diasEnMes = fechaFin.getDate() - fechaInicio.getDate() + 1
 
       for (let i = 0; i < diasEnMes; i++) {
-        const montoAleatorio = Math.floor(Math.random() * 100) + 1;
-        const categoriaAleatoria = categorias[Math.floor(Math.random() * categorias.length)];
-        const fecha = new Date(fechaInicio.getFullYear(), fechaInicio.getMonth(), fechaInicio.getDate() + i);
+        const montoAleatorio = Math.floor(Math.random() * 100) + 1
+        const categoriaAleatoria =
+          categorias[Math.floor(Math.random() * categorias.length)]
+        const fecha = new Date(
+          fechaInicio.getFullYear(),
+          fechaInicio.getMonth(),
+          fechaInicio.getDate() + i
+        )
         gastos.push({
           fecha: fecha.toISOString().split('T')[0],
           categoria: categoriaAleatoria,
-          monto: montoAleatorio
-        });
+          monto: montoAleatorio,
+        })
       }
 
-      const gastosFiltrados = ref([]);
-      const porcentajes = reactive({});
+      const gastosFiltrados = ref([])
+      const porcentajes = reactive({})
 
       const ultimosGastos = computed(() => {
-        return gastosFiltrados.value.length ? gastosFiltrados.value.slice(-10).reverse() : gastos.slice(-10).reverse();
-      });
+        return gastosFiltrados.value.length
+          ? gastosFiltrados.value.slice(-10).reverse()
+          : gastos.slice(-10).reverse()
+      })
 
       const filtrarPorCategoria = (categoria) => {
-        gastosFiltrados.value = gastos.filter(gasto => gasto.categoria === categoria);
-        actualizarGraficos();
-      };
+        gastosFiltrados.value = gastos.filter(
+          (gasto) => gasto.categoria === categoria
+        )
+        actualizarGraficos()
+      }
 
       const calcularPorcentajes = () => {
-        const total = gastos.reduce((acumulador, gasto) => acumulador + gasto.monto, 0);
-        categorias.forEach(categoria => {
+        const total = gastos.reduce(
+          (acumulador, gasto) => acumulador + gasto.monto,
+          0
+        )
+        categorias.forEach((categoria) => {
           const totalCategoria = gastos
-            .filter(gasto => gasto.categoria === categoria)
-            .reduce((acumulador, gasto) => acumulador + gasto.monto, 0);
-          porcentajes[categoria] = (totalCategoria / total) * 100;
-        });
-      };
+            .filter((gasto) => gasto.categoria === categoria)
+            .reduce((acumulador, gasto) => acumulador + gasto.monto, 0)
+          porcentajes[categoria] = (totalCategoria / total) * 100
+        })
+      }
 
-      let graficoGastos;
+      let graficoGastos
 
       const actualizarGraficos = () => {
-        calcularPorcentajes();
+        calcularPorcentajes()
 
-        const ctx1 = document.getElementById('expensesChart').getContext('2d');
+        const ctx1 = document.getElementById('expensesChart').getContext('2d')
         if (graficoGastos) {
-          graficoGastos.destroy();
+          graficoGastos.destroy()
         }
         graficoGastos = new Chart(ctx1, {
           type: 'bar',
           data: {
             labels: categorias,
-            datasets: [{
-              label: 'Porcentaje de Gastos por Rubro',
-              data: categorias.map(categoria => porcentajes[categoria] || 0),
-              backgroundColor: ['#3498db', '#9b59b6', '#e74c3c', '#2ecc71', '#f1c40f'],
-              borderColor: '#fff',
-              borderWidth: 1
-            }]
+            datasets: [
+              {
+                label: 'Porcentaje de Gastos por Rubro',
+                data: categorias.map(
+                  (categoria) => porcentajes[categoria] || 0
+                ),
+                backgroundColor: [
+                  '#3498db',
+                  '#9b59b6',
+                  '#e74c3c',
+                  '#2ecc71',
+                  '#f1c40f',
+                ],
+                borderColor: '#fff',
+                borderWidth: 1,
+              },
+            ],
           },
           options: {
             scales: {
@@ -149,43 +202,45 @@ export const componentConfigs = {
                 beginAtZero: true,
                 ticks: {
                   callback: function (value) {
-                    return value + '%';
-                  }
-                }
-              }
-            }
-          }
-        });
+                    return value + '%'
+                  },
+                },
+              },
+            },
+          },
+        })
 
-        const ctx2 = document.getElementById('trendChart').getContext('2d');
+        const ctx2 = document.getElementById('trendChart').getContext('2d')
         new Chart(ctx2, {
           type: 'line',
           data: {
-            labels: gastos.map(gasto => gasto.fecha),
-            datasets: [{
-              label: 'Evolución de Gastos',
-              data: gastos.map(gasto => gasto.monto),
-              fill: false,
-              borderColor: '#2ecc71',
-              tension: 0.1
-            }]
+            labels: gastos.map((gasto) => gasto.fecha),
+            datasets: [
+              {
+                label: 'Evolución de Gastos',
+                data: gastos.map((gasto) => gasto.monto),
+                fill: false,
+                borderColor: '#2ecc71',
+                tension: 0.1,
+              },
+            ],
           },
           options: {
             scales: {
               y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      };
+                beginAtZero: true,
+              },
+            },
+          },
+        })
+      }
 
       onMounted(() => {
-        actualizarGraficos();
-      });
+        actualizarGraficos()
+      })
 
-      return { ultimosGastos, categorias, filtrarPorCategoria };
-    }
+      return { ultimosGastos, categorias, filtrarPorCategoria }
+    },
   },
   'Registro': {
     setup() {
@@ -196,98 +251,102 @@ export const componentConfigs = {
         clave: '',
         repetirClave: '',
         aceptarTerminos: '',
-      });
+      })
 
       const displayErrorAlert = (keyObject, valueObject) => {
-
         switch (keyObject) {
           case 'nombre':
           case 'apellido':
           case 'clave':
           case 'repetirClave':
             if (valueObject === '') {
-              alert(`Campo: ${keyObject.toUpperCase()} - vacío. Todos los campos son obligatorios.`);
-              return false;
+              alert(
+                `Campo: ${keyObject.toUpperCase()} - vacío. Todos los campos son obligatorios.`
+              )
+              return false
             }
-            break;
+            break
           case 'mail':
             if (!valueObject.includes('@') || !valueObject.includes('.com')) {
-              alert(`El correo electrónico, debe contener '@' y '.com'`);
-              return false;
+              alert(`El correo electrónico, debe contener '@' y '.com'`)
+              return false
             }
-            break;
+            break
           case 'aceptarTerminos':
             if (!valueObject) {
-              alert(`Debe aceptar los términos y condiciones`);
-              return false;
+              alert(`Debe aceptar los términos y condiciones`)
+              return false
             }
-            break;
+            break
           default:
-            break;
+            break
         }
-        return true;
+        return true
       }
 
       const validarRegistroForm = () => {
-
-        const valuesArray = Object.values(registerFormData);
-        console.log("valuesArray", valuesArray);
-        if (valuesArray.every(value => value.trim() === '')) {
-          alert('Todos los campos son obligatorios.');
-          return false;
+        const valuesArray = Object.values(registerFormData)
+        console.log('valuesArray', valuesArray)
+        if (valuesArray.every((value) => value.trim() === '')) {
+          alert('Todos los campos son obligatorios.')
+          return false
         }
 
         if (registerFormData.clave.length < 6) {
-          alert("La contraseña debe tener al menos 6 caracteres");
-          return false;
+          alert('La contraseña debe tener al menos 6 caracteres')
+          return false
         }
 
         if (registerFormData.clave !== registerFormData.repetirClave) {
-          alert("Las contraseñas no coinciden");
-          return false;
+          alert('Las contraseñas no coinciden')
+          return false
         }
-        
+
         for (const keyForm in registerFormData) {
           if (Object.hasOwnProperty.call(registerFormData, keyForm)) {
-            const fieldValue = registerFormData[keyForm];
+            const fieldValue = registerFormData[keyForm]
             if (!displayErrorAlert(keyForm, fieldValue)) {
-              return false;
+              return false
             }
           }
         }
-        return true;
+        return true
       }
 
       const submitRegisterForm = () => {
         if (validarRegistroForm()) {
-          console.log("%cForm Data Register: ","color: green", Vue.toRaw(registerFormData));
+          console.log(
+            '%cForm Data Register: ',
+            'color: green',
+            Vue.toRaw(registerFormData)
+          )
         }
-      };
+      }
 
       function mostrarModal() {
-        const modal = document.querySelectorAll(".modal")[0];
-        modal.classList.add('show');
-        const body = document.body;
-        body.style.overflow = 'hidden';
+        const modal = document.querySelectorAll('.modal')[0]
+        modal.classList.add('show')
+        const body = document.body
+        body.style.overflow = 'hidden'
       }
-      
+
       function cerrarModal() {
-        const modal = document.querySelectorAll(".modal")[0];
-        modal.classList.remove('show');
-        const body = document.body;
-        body.style.overflow = 'auto';
+        const modal = document.querySelectorAll('.modal')[0]
+        modal.classList.remove('show')
+        const body = document.body
+        body.style.overflow = 'auto'
       }
-      
-      window.onclick = function(event) {
-        const modal = document.getElementById("myModal");
-        const body = document.body;
+
+      window.onclick = function (event) {
+        const modal = document.getElementById('myModal')
+        const body = document.body
         if (event.target == modal) {
-          modal.style.display = "none";
-          body.style.overflow = 'auto';
+          modal.style.display = 'none'
+          body.style.overflow = 'auto'
         }
       }
 
-      return { registerFormData, submitRegisterForm, mostrarModal, cerrarModal };    
-    }
+      return { registerFormData, submitRegisterForm, mostrarModal, cerrarModal }
+    },
   },
-};
+}
