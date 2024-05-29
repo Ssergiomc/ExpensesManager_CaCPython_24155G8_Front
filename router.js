@@ -40,7 +40,7 @@ const routes = [
   { path: '/contacto', component: () => createComponent('Contacto') },
   { path: '/form/success', component: () => createComponent('FormSuccess') },
   { path: '/test', component: () => createComponent('Test') },
-  { path: '*', component: () => createComponent('ErrorPage')}
+  // { path: '*', component: () => createComponent('ErrorPage')}
   // { path: '/:pathMatch(.*)*', component: () =>  createComponent('ErrorPage')}
 ];
 

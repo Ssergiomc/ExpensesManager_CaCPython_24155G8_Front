@@ -1,11 +1,4 @@
 [[redirects]]
-  from = "/form/success"
-  to = "/form/success"
+  from = "/*"
+  to = "/index.html"
   status = 200
-
-
-[[redirects]]
-  from = "*"
-  to = "/errorPage"
-  status = 404
-  force = true
