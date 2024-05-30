@@ -73,19 +73,19 @@ export const componentConfigs = {
         name: '',
         email: '',
         comment: '',
-      })
+      });
 
       const errors = Vue.reactive({
         name: '',
         email: '',
-      })
+      });
 
       const validateForm = () => {
-        console.log('%cValidating form...', 'color: orange')
-        errors.name = formDataContact.name ? '' : 'El nombre es requerido.'
-        errors.email = (formDataContact.email.includes('@') && formDataContact.email.includes('.com')) ? '' : "El correo electrónico, debe contener '@' y '.com'"
-        return !errors.name && !errors.email
-      }
+        console.log('%cValidating form...', 'color: orange');
+        errors.name = formDataContact.name ? '' : 'El nombre es requerido.';
+        errors.email = formDataContact.email.includes('@') && formDataContact.email.includes('.com') ? '' : "El correo electrónico debe contener '@' y '.com'";
+        return !errors.name && !errors.email;
+      };
 
       const submitFormContact = () => {
         if (validateForm()) {
@@ -100,7 +100,7 @@ export const componentConfigs = {
           hiddenFormContact.submit();
           window.location.href = "/formsuccess";
         }
-      }
+      };
 
       return { formDataContact, errors, submitFormContact }
     },
@@ -386,7 +386,7 @@ export const componentConfigs = {
         'url("../assets/images/extra/pexels-goumbik-928184.webp")',
         'url("../assets/images/extra/pexels-john-guccione-www-advergroup-com-1874301-3531895.webp")',
         'url("../assets/images/extra/pexels-karolina-grabowska-4497591.webp")',
-        'url("../assets/images/extra//assets/images/extra/money-2724241_640.webp")',
+        'url("../assets/images/extra/money-2724241_640.webp")',
       ];
   
       const randomImage = images[Math.floor(Math.random() * images.length)];
