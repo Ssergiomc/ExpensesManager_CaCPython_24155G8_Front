@@ -17,18 +17,16 @@
 
   <h2 class="subtitle">Escríbenos</h2>
   <div class="contacto-form">
-    <form id="hidden-form-contact" name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="display: none">
+    <form id="hidden-form-contact" name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="display: none;">
       <div class="form-group">
         <input type="text" name="name" />
         <input type="email" name="email" />
         <textarea name="comment"></textarea>
       </div>
-      <button type="submit" class="button-form" aria-label="Submit">
-        Enviar
-      </button>
+      <input type="hidden" name="form-name" value="contact-form" />
     </form>
 
-    <form class="form-contacto" validate @submit.prevent="submitFormContact" name="contact-form">
+    <form class="form-contacto" @submit.prevent="submitFormContact">
       <div class="form-group-contact">
         <div class="input-group-control-error">
           <div class="input-group">
@@ -71,9 +69,7 @@
           </textarea>
         </div>
       </div>
-      <button type="submit" class="button-form" aria-label="Submit">
-        Enviar
-      </button>
+      <button type="submit" class="button-form" aria-label="Submit">Enviar</button>
     </form>
   </div>
 </article>
