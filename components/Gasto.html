@@ -2,6 +2,7 @@
   <h1 class="title">Gasto</h1>
 
   <form id="hidden-form" name="expense-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="display: none;">
+    <input type="hidden" name="form-name" value="expense-form" />
     <div class="form-group">
       <input type="text" name="name" />
       <input type="text" name="product" />
@@ -23,7 +24,7 @@
       </select>
       <input type="file" name="ticket" />
     </div>
-    <input type="hidden" name="form-name" value="expense-form" />
+    <button type="submit" class="button-form" aria-label="Save">Guardar</button>
   </form>
 
   <form class="form-gasto" validate @submit.prevent="submitForm" name="expense-form">
