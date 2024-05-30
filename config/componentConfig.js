@@ -73,34 +73,40 @@ export const componentConfigs = {
         name: '',
         email: '',
         comment: '',
-      })
+      });
 
       const errors = Vue.reactive({
         name: '',
         email: '',
-      })
+      });
 
       const validateForm = () => {
-        console.log('%cValidating form...', 'color: orange')
-        errors.name = formDataContact.name ? '' : 'El nombre es requerido.'
-        errors.email = (formDataContact.email.includes('@') && formDataContact.email.includes('.com')) ? '' : "El correo electrónico, debe contener '@' y '.com'"
-        return !errors.name && !errors.email
-      }
+        console.log('%cValidating form...', 'color: orange');
+        errors.name = formDataContact.name ? '' : 'El nombre es requerido.';
+        errors.email = formDataContact.email.includes('@') && formDataContact.email.includes('.com') ? '' : "El correo electrónico debe contener '@' y '.com'";
+        return !errors.name && !errors.email;
+      };
 
       const submitFormContact = () => {
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', Vue.toRaw(formDataContact));
           const hiddenFormContact = document.querySelector('#hidden-form-contact');
+
+          const formData = new FormData(hiddenFormContact);
+          formData.append('form-name', 'contact-form');
+          Object.keys(formDataContact).forEach(key => {
+            formData.append(key, formDataContact[key]);
+          });
       
-          hiddenFormContact.querySelector('input[name="name"]').value = formDataContact.name;
-          hiddenFormContact.querySelector('input[name="email"]').value = formDataContact.email;
-          hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
+          // hiddenFormContact.querySelector('input[name="name"]').value = formDataContact.name;
+          // hiddenFormContact.querySelector('input[name="email"]').value = formDataContact.email;
+          // hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
 
           console.log('hiddenFormContact - ', hiddenFormContact);
           hiddenFormContact.submit();
           window.location.href = "/formsuccess";
         }
-      }
+      };
 
       return { formDataContact, errors, submitFormContact }
     },
@@ -386,7 +392,7 @@ export const componentConfigs = {
         'url("../assets/images/extra/pexels-goumbik-928184.webp")',
         'url("../assets/images/extra/pexels-john-guccione-www-advergroup-com-1874301-3531895.webp")',
         'url("../assets/images/extra/pexels-karolina-grabowska-4497591.webp")',
-        'url("../assets/images/extra//assets/images/extra/money-2724241_640.webp")',
+        'url("../assets/images/extra/money-2724241_640.webp")',
       ];
   
       const randomImage = images[Math.floor(Math.random() * images.length)];
