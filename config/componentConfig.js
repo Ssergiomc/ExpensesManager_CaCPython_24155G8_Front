@@ -71,7 +71,7 @@ export const componentConfigs = {
     },
   },
   'Contacto': {
-    setup() {
+    setup(_, { root }) {
 
       const formDataContact = Vue.reactive({
         name: '',
@@ -91,7 +91,8 @@ export const componentConfigs = {
         return !errors.name && !errors.email;
       };
 
-      const submitFormContact = () => {
+      const submitFormContact = (event) => {
+        event.preventDefault();
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', Vue.toRaw(formDataContact));
           const hiddenFormContact = document.querySelector('#hidden-form-contact');
@@ -102,11 +103,28 @@ export const componentConfigs = {
           hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
 
           // console.log('hiddenFormContact - ', hiddenFormContact);
-          hiddenFormContact.submit();
-          hiddenFormContact.addEventListener('submit', () => {
-            window.location.href = '/formsuccess';
-          });
+
+          // hiddenFormContact.submit();
+          // hiddenFormContact.addEventListener('submit', () => {
+          //   window.location.href = '/formsuccess';
+          // });
           // console.log('hiddenFormContact - 3 ', hiddenFormContact);
+          const formDataObj = new FormData(hiddenFormContact);
+          fetch(hiddenForm.action, {
+            method: 'POST',
+            body: formDataObj,
+          }).then(response => {
+            if (response.ok) {
+              // If the form submission is successful, redirect to /formsuccess
+              setTimeout(() => {
+                root.$router.push('/formsuccess');
+              }, 750);
+            } else {
+              console.error('Form submission failed:', response);
+            }
+          }).catch(error => {
+            console.error('Error submitting form:', error);
+          });
         }
       };
 
