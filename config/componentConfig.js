@@ -71,7 +71,7 @@ export const componentConfigs = {
     },
   },
   'Contacto': {
-    setup(_, { root }) {
+    setup() {
 
       const formDataContact = Vue.reactive({
         name: '',
@@ -104,27 +104,27 @@ export const componentConfigs = {
 
           // console.log('hiddenFormContact - ', hiddenFormContact);
 
-          // hiddenFormContact.submit();
-          // hiddenFormContact.addEventListener('submit', () => {
-          //   window.location.href = '/formsuccess';
-          // });
+          hiddenFormContact.submit();
+          setTimeout(() => {
+            window.location.href = '/formsuccess';
+          }, 750);
           // console.log('hiddenFormContact - 3 ', hiddenFormContact);
-          const formDataObj = new FormData(hiddenFormContact);
-          fetch(hiddenFormContact.action, {
-            method: 'POST',
-            body: formDataObj,
-          }).then(response => {
-            if (response.ok) {
-              // If the form submission is successful, redirect to /formsuccess
-              setTimeout(() => {
-                root.$router.push('/formsuccess');
-              }, 750);
-            } else {
-              console.error('Form submission failed:', response);
-            }
-          }).catch(error => {
-            console.error('Error submitting form:', error);
-          });
+          // const formDataObj = new FormData(hiddenFormContact);
+          // fetch(hiddenFormContact.action, {
+          //   method: 'POST',
+          //   body: formDataObj,
+          // }).then(response => {
+          //   if (response.ok) {
+          //     // If the form submission is successful, redirect to /formsuccess
+          //     setTimeout(() => {
+          //       root.$router.push('/formsuccess');
+          //     }, 750);
+          //   } else {
+          //     console.error('Form submission failed:', response);
+          //   }
+          // }).catch(error => {
+          //   console.error('Error submitting form:', error);
+          // });
         }
       };
 
