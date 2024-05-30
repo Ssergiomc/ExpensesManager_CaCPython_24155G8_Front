@@ -42,6 +42,8 @@ export const componentConfigs = {
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData));
           const hiddenForm = document.querySelector('#hidden-form');
+          console.log('hiddenForm - 1', hiddenForm);
+
       
           hiddenForm.querySelector('input[name="name"]').value = formData.name;
           hiddenForm.querySelector('input[name="product"]').value = formData.product;
@@ -49,6 +51,8 @@ export const componentConfigs = {
           hiddenForm.querySelector('input[name="date"]').value = formData.date;
           hiddenForm.querySelector('select[name="category"]').value = formData.category;
           hiddenForm.querySelector('select[name="paymentType"]').value = formData.paymentType;
+          console.log('hiddenForm - 2', hiddenForm);
+
 
           if (formData.ticket) {
             const fileInput = hiddenForm.querySelector('input[name="ticket"]');
@@ -57,9 +61,9 @@ export const componentConfigs = {
             fileInput.files = dataTransfer.files;
           }
 
-          console.log('hiddenForm - ', hiddenForm);
+          console.log('hiddenForm - 3', hiddenForm);
           hiddenForm.submit();
-          window.location.href = "/formsuccess";
+          // window.location.href = "/formsuccess";
         }
       }
 
@@ -91,20 +95,17 @@ export const componentConfigs = {
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', Vue.toRaw(formDataContact));
           const hiddenFormContact = document.querySelector('#hidden-form-contact');
+          console.log('hiddenFormContact - 1 ', hiddenFormContact);
 
-          const formData = new FormData(hiddenFormContact);
-          formData.append('form-name', 'contact-form');
-          Object.keys(formDataContact).forEach(key => {
-            formData.append(key, formDataContact[key]);
-          });
-      
-          // hiddenFormContact.querySelector('input[name="name"]').value = formDataContact.name;
-          // hiddenFormContact.querySelector('input[name="email"]').value = formDataContact.email;
-          // hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
+          hiddenFormContact.querySelector('input[name="name"]').value = formDataContact.name;
+          hiddenFormContact.querySelector('input[name="email"]').value = formDataContact.email;
+          hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
 
           console.log('hiddenFormContact - ', hiddenFormContact);
           hiddenFormContact.submit();
-          window.location.href = "/formsuccess";
+          // window.location.href = "/formsuccess";
+            
+          console.log('hiddenFormContact - 3 ', hiddenFormContact);
         }
       };
 
