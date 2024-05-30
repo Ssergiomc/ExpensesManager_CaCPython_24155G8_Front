@@ -110,7 +110,7 @@ export const componentConfigs = {
           // });
           // console.log('hiddenFormContact - 3 ', hiddenFormContact);
           const formDataObj = new FormData(hiddenFormContact);
-          fetch(hiddenForm.action, {
+          fetch(hiddenFormContact.action, {
             method: 'POST',
             body: formDataObj,
           }).then(response => {
