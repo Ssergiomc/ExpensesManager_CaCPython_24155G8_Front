@@ -11,9 +11,8 @@ export const componentConfigs = {
   },
   'Gasto': {
     setup() {
-      const { reactive, toRaw } = Vue;
 
-      const formData = reactive({
+      const formData = Vue.reactive({
         name: '',
         product: '',
         cost: '',
@@ -23,7 +22,7 @@ export const componentConfigs = {
         ticket: null,
       })
 
-      const errors = reactive({
+      const errors = Vue.reactive({
         name: '',
         cost: '',
       })
@@ -35,14 +34,13 @@ export const componentConfigs = {
       const validateForm = () => {
         console.log('%cValidating form...', 'color: orange')
         errors.name = formData.name ? '' : 'El nombre es requerido.'
-        errors.cost =
-          formData.cost > 0 ? '' : 'El coste debe ser mayor que cero.'
+        errors.cost = formData.cost > 0 ? '' : 'El coste debe ser mayor que cero.'
         return !errors.name && !errors.cost
       }
 
       const submitForm = () => {
         if (validateForm()) {
-          console.log('%cForm Data: ', 'color: green', toRaw(formData));
+          console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData));
           const hiddenForm = document.querySelector('#hidden-form');
       
           hiddenForm.querySelector('input[name="name"]').value = formData.name;
@@ -70,8 +68,41 @@ export const componentConfigs = {
   },
   'Contacto': {
     setup() {
-      const message = Vue.ref('Welcome to the Contacto page!')
-      return { message }
+
+      const formDataContact = Vue.reactive({
+        name: '',
+        email: '',
+        comment: '',
+      })
+
+      const errors = Vue.reactive({
+        name: '',
+        email: '',
+      })
+
+      const validateForm = () => {
+        console.log('%cValidating form...', 'color: orange')
+        errors.name = formDataContact.name ? '' : 'El nombre es requerido.'
+        errors.email = (formDataContact.email.includes('@') && formDataContact.email.includes('.com')) ? '' : "El correo electrónico, debe contener '@' y '.com'"
+        return !errors.name && !errors.email
+      }
+
+      const submitFormContact = () => {
+        if (validateForm()) {
+          console.log('%cForm Data: ', 'color: green', Vue.toRaw(formDataContact));
+          const hiddenFormContact = document.querySelector('#hidden-form-contact');
+      
+          hiddenFormContact.querySelector('input[name="name"]').value = formDataContact.name;
+          hiddenFormContact.querySelector('input[name="email"]').value = formDataContact.email;
+          hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
+
+          console.log('hiddenFormContact - ', hiddenFormContact);
+          hiddenFormContact.submit();
+          window.location.href = "/formsuccess";
+        }
+      }
+
+      return { formDataContact, errors, submitFormContact }
     },
   },
   'Home': {

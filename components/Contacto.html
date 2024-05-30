@@ -15,4 +15,65 @@
     ></iframe>
   </div>
 
+  <h2 class="subtitle">Escríbenos</h2>
+  <div class="contacto-form">
+    <form id="hidden-form-contact" name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="display: none">
+      <div class="form-group">
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="comment"></textarea>
+      </div>
+      <button type="submit" class="button-form" aria-label="Submit">
+        Enviar
+      </button>
+    </form>
+
+    <form class="form-contacto" validate @submit.prevent="submitFormContact" name="contact-form">
+      <div class="form-group-contact">
+        <div class="input-group-control-error">
+          <div class="input-group">
+            <label for="name">Nombre</label>
+            <input
+              v-model="formDataContact.name"
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Florencia"
+            />
+            <small v-if="errors.name" class="error">{{ errors.name }}</small>
+          </div>
+        </div>
+        <div class="input-group-control-error">
+          <div class="input-group">
+            <label for="email">Mail</label>
+            <input
+              v-model="formDataContact.email"
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="tumail@gmail.com"
+            />
+            <small v-if="errors.email" class="error">{{ errors.email }}</small>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="comment">Comentario</label>
+          <textarea
+            v-model="formDataContact.comment"
+            type="text"
+            id="comment"
+            name="comment"
+            rows="6"
+            cols="50"
+          >
+          </textarea>
+        </div>
+      </div>
+      <button type="submit" class="button-form" aria-label="Submit">
+        Enviar
+      </button>
+    </form>
+  </div>
 </article>
