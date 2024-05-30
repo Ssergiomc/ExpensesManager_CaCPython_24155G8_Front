@@ -42,17 +42,15 @@ export const componentConfigs = {
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', Vue.toRaw(formData));
           const hiddenForm = document.querySelector('#hidden-form');
-          console.log('hiddenForm - 1', hiddenForm);
+          // console.log('hiddenForm - 1', hiddenForm);
 
-      
           hiddenForm.querySelector('input[name="name"]').value = formData.name;
           hiddenForm.querySelector('input[name="product"]').value = formData.product;
           hiddenForm.querySelector('input[name="cost"]').value = formData.cost;
           hiddenForm.querySelector('input[name="date"]').value = formData.date;
           hiddenForm.querySelector('select[name="category"]').value = formData.category;
           hiddenForm.querySelector('select[name="paymentType"]').value = formData.paymentType;
-          console.log('hiddenForm - 2', hiddenForm);
-
+          // console.log('hiddenForm - 2', hiddenForm);
 
           if (formData.ticket) {
             const fileInput = hiddenForm.querySelector('input[name="ticket"]');
@@ -61,7 +59,7 @@ export const componentConfigs = {
             fileInput.files = dataTransfer.files;
           }
 
-          console.log('hiddenForm - 3', hiddenForm);
+          // console.log('hiddenForm - 3', hiddenForm);
           hiddenForm.submit();
           // window.location.href = "/formsuccess";
         }
@@ -95,17 +93,18 @@ export const componentConfigs = {
         if (validateForm()) {
           console.log('%cForm Data: ', 'color: green', Vue.toRaw(formDataContact));
           const hiddenFormContact = document.querySelector('#hidden-form-contact');
-          console.log('hiddenFormContact - 1 ', hiddenFormContact);
+          // console.log('hiddenFormContact - 1 ', hiddenFormContact);
 
           hiddenFormContact.querySelector('input[name="name"]').value = formDataContact.name;
           hiddenFormContact.querySelector('input[name="email"]').value = formDataContact.email;
           hiddenFormContact.querySelector('textarea[name="comment"]').value = formDataContact.comment;
 
-          console.log('hiddenFormContact - ', hiddenFormContact);
+          // console.log('hiddenFormContact - ', hiddenFormContact);
           hiddenFormContact.submit();
-          // window.location.href = "/formsuccess";
-            
-          console.log('hiddenFormContact - 3 ', hiddenFormContact);
+          setTimeout(() => {
+            window.location.href = '/formsuccess';
+          }, 750);
+          // console.log('hiddenFormContact - 3 ', hiddenFormContact);
         }
       };
 
