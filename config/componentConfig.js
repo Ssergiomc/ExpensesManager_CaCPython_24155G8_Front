@@ -71,7 +71,7 @@ export const componentConfigs = {
     },
   },
   'Contacto': {
-    setup() {
+    setup(_, { root }) {
 
       const formDataContact = Vue.reactive({
         name: '',
@@ -105,9 +105,21 @@ export const componentConfigs = {
           // console.log('hiddenFormContact - ', hiddenFormContact);
 
           hiddenFormContact.submit();
+          // setTimeout(() => {
+          //   window.location.href = '/formsuccess';
+          // }, 750);
+
+          let submissionSuccessful = false;
+          console.log('submissionSuccessful - ', submissionSuccessful);
           setTimeout(() => {
-            window.location.href = '/formsuccess';
-          }, 750);
+            console.log('timeout');
+            submissionSuccessful = true;
+          }, 1000);
+
+          if (submissionSuccessful) {
+            console.log('Form submission successful!');
+            this.$router.push('/formsuccess');
+          }
           // console.log('hiddenFormContact - 3 ', hiddenFormContact);
           // const formDataObj = new FormData(hiddenFormContact);
           // fetch(hiddenFormContact.action, {
