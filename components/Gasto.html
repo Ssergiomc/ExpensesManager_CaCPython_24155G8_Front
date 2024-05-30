@@ -23,7 +23,7 @@
       </select>
       <input type="file" name="ticket" />
     </div>
-    <button type="submit" class="button-form" aria-label="Save">Guardar</button>
+    <input type="hidden" name="form-name" value="expense-form" />
   </form>
 
   <form class="form-gasto" validate @submit.prevent="submitForm" name="expense-form">
