@@ -12,4 +12,49 @@
   .contacto-map {
     width: 100%;
   }
+  .form-contacto {
+    padding: 1rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .form-group-contact {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+    .input-group-control-error {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+      align-items: center;
+    }
+    .input-group{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+      label{
+        margin-bottom: 0.5rem;
+      }
+      input{
+        width: 50%;
+      }
+      #comment{
+        width: 50%;
+        border-radius: 0.5rem;
+      }
+    }
+    @media screen and (max-width: 576px) {
+      padding: 1rem;
+      .input-group{
+        input{
+          width: 100%;
+        }
+        #comment{
+          width: 100%;
+        }
+      }
+    }
+  }
 }
