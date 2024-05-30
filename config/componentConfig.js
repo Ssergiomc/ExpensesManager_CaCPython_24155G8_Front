@@ -61,7 +61,11 @@ export const componentConfigs = {
 
           // console.log('hiddenForm - 3', hiddenForm);
           hiddenForm.submit();
-          // window.location.href = "/formsuccess";
+          hiddenForm.addEventListener('submit', () => {
+            setTimeout(() => {
+              window.location.href = '/formsuccess';
+            }, 500);
+          });
         }
       }
 
@@ -101,9 +105,11 @@ export const componentConfigs = {
 
           // console.log('hiddenFormContact - ', hiddenFormContact);
           hiddenFormContact.submit();
-          setTimeout(() => {
-            window.location.href = '/formsuccess';
-          }, 750);
+          hiddenFormContact.addEventListener('submit', () => {
+            setTimeout(() => {
+              window.location.href = '/formsuccess';
+            }, 500);
+          });
           // console.log('hiddenFormContact - 3 ', hiddenFormContact);
         }
       };
