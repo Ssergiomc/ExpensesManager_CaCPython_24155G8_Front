@@ -36,7 +36,7 @@ Our expense tracker family app provides a seamless solution for managing expense
   
     🟢 **Expenses - Form Validation**: *(ADDED)*
     - Form Validation: There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
-    - Update: Form managed by built-in form detection provided by Netlify this feature simplifies the process of adding and managing forms. This eliminates the need for extra API calls or additional JavaScript. Once enabled, Netlify's build system automatically parses your HTML at deploy time, so there's no need for you to make an API call or include extra JavaScript on your site. The data provided by form is accessible on Netlify and can be exported to CSV.
+    - **Update**: Form managed by built-in form detection provided by Netlify this feature simplifies the process of adding and managing forms. This eliminates the need for extra API calls or additional JavaScript. Once enabled, Netlify's build system automatically parses your HTML at deploy time, so there's no need for you to make an API call or include extra JavaScript on your site. The data provided by form is accessible on Netlify and can be exported to CSV.
     - Redirect Success: After Form submission there will be a redirect to a success page that displays a random picture on the background (there are 5).
   
     🔷 **Dashboard**: *(DISPLAY RANDOM DATA)*
@@ -51,15 +51,22 @@ Our expense tracker family app provides a seamless solution for managing expense
           - `actualizarGraficos()`: Actualiza los gráficos con los datos actualizados.
           - `calcularGastosPorCategoria()`: gastos totales por cada categoría.
           - `mounted()`: se llama al método `actualizarGraficos()` para inicializar los gráficos, se utilizan las bibliotecas Chart.js para renderizar los gráficos en los elementos canvas correspondientes. El gráfico de barras muestra los gastos por categoría, mientras que el gráfico de líneas muestra la evolución de los gastos a lo largo del tiempo.
-    
-    🔶 **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
-    - A registration and login system ensures secure access to personalized accounts, enhancing privacy and data protection.
+
+    🔶 **User Registration**: *(FUNCTIONALITY TO BE ADDED)*
+    - Form + Validation: Validation for name different from empty and mail must content '@' and '.com'. If not will display an error message.
+    - A registration system ensures secure access to personalized accounts, enhancing privacy and data protection.
   
-    🔶 **Profile Management**: *(TO BE ADDED)*
+    🔶 **User Authentication**: *(FUNCTIONALITY TO BE ADDED)*
+    - A login system ensures secure access to personalized accounts, enhancing privacy and data protection.
+  
+    🔴 **Profile Management**: *(TO BE ADDED)*
     - Users can manage their personal information and preferences within the app, ensuring a tailored experience.
   
     🟢  **Contact**: *(ADDED)*
     - This section displays an iframe map from the Google Maps.
+    - **Form + Validation**: There is a validation for name different from empty and mail must content '@' and '.com'. If not will display an error message.
+    - **Update**: Form managed by built-in form detection provided by Netlify this feature simplifies the process of adding and managing forms. This eliminates the need for extra API calls or additional JavaScript. Once enabled, Netlify's build system automatically parses your HTML at deploy time, so there's no need for you to make an API call or include extra JavaScript on your site. The data provided by form is accessible on Netlify and can be exported to CSV.
+    - Redirect Success: After Form submission there will be a redirect to a success page that displays a random picture on the background (there are 5).
   
     🟢  **Theme Mode Control**: *(ADDED)*
     - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience.
