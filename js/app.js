@@ -12,6 +12,22 @@ const loadFixedAppComponents = async (componentName) => {
   return response.text()
 };
 
+const updateMetaTags = (title, description) => {
+  document.title = title;
+
+  const metaTitle = document.querySelector('meta[property="og:title"]');
+  const metaTwitterTitle = document.querySelector('meta[name="twitter:title"]');
+  const metaDescription = document.querySelector('meta[name="description"]');
+  const metaOgDescription = document.querySelector('meta[property="og:description"]');
+  const metaTwitterDescription = document.querySelector('meta[name="twitter:description"]');
+
+  if (metaTitle) metaTitle.setAttribute('content', title);
+  if (metaTwitterTitle) metaTwitterTitle.setAttribute('content', title);
+  if (metaDescription) metaDescription.setAttribute('content', description);
+  if (metaOgDescription) metaOgDescription.setAttribute('content', description);
+  if (metaTwitterDescription) metaTwitterDescription.setAttribute('content', description);
+};
+
 (async () => {
   const router = createRouter({
     history: createWebHistory(),
@@ -19,8 +35,16 @@ const loadFixedAppComponents = async (componentName) => {
       routes.map(async (route) => ({
         path: route.path,
         component: route.component ? route.component() : undefined,
+        meta: route.meta
       })).concat({ path: '/:pathMatch(.*)*', redirect: '/404' })
     ),
+  });
+
+  router.beforeEach((to, from, next) => {
+    const title = to.meta.title || 'AhorroFácil || Control de gastos';
+    const description = to.meta.description || "Controla tus gastos familiares fácilmente con nuestra app. Descubre cómo gestionar tus finanzas de manera efectiva. ¡Comienza hoy y toma el control de tus gastos!";
+    updateMetaTags(title, description);
+    next();
   });
 
   // // Add a global navigation guard

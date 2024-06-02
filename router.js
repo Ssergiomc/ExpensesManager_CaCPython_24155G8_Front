@@ -1,11 +1,11 @@
-import { componentConfigs } from "./config/componentConfig.js";
+import { componentConfigs } from './config/componentConfig.js'
 
-const  createComponent = async (path) => {
+const createComponent = async (path) => {
   const response = await fetch(`../components/${path}.html`);
   if (!response.ok) {
     throw new Error(`Failed to fetch template for ${path}`);
   }
-  const template = await response.text();
+  const template = await response.text()
 
   // Fetch the specific component configuration
   let componentConfig = componentConfigs[path] || {};
@@ -16,8 +16,8 @@ const  createComponent = async (path) => {
     componentConfig = {
       ...componentConfig,
       setup() {
-        return {}; // Return an empty object if no setup is needed
-      }
+        return {}
+      },
     };
   }
   // console.log(`Loaded template for -> ${path}`);
@@ -32,16 +32,68 @@ const  createComponent = async (path) => {
 }
 
 const routes = [
-  { path: '/', component: () => createComponent('Home') },
-  { path: '/login', component: () => createComponent('Login') },
-  { path: '/registro', component: () => createComponent('Registro') },
-  { path: '/dashboard', component: () => createComponent('Dash') },
-  { path: '/gasto', component: () => createComponent('Gasto') },
-  { path: '/contacto', component: () => createComponent('Contacto') },
-  { path: '/formsuccess', component: () => createComponent('FormSuccess') },
-  { path: '/404', component: () => createComponent('ErrorPage')},
+  {
+    path: '/',
+    component: () => createComponent('Home'),
+    meta: {
+      title: 'Inicio - AhorroFácil || Control de gastos',
+      description: "Controla tus gastos familiares fácilmente con nuestra app. Descubre cómo gestionar tus finanzas de manera efectiva desde la comodidad de tu hogar. ¡Comienza hoy y toma el control de tus gastos!",
+    },
+  },
+  {
+    path: '/login',
+    component: () => createComponent('Login'),
+    meta: { 
+      title: 'Login - AhorroFácil || Control de gastos',
+      description: "Inicia sesión en nuestra app para controlar tus gastos familiares. Gestiona tus finanzas de manera efectiva y mantén tus gastos bajo control. ¡Empieza ahora y accede a todas tus herramientas financieras!",
+    },
+  },
+  {
+    path: '/registro',
+    component: () => createComponent('Registro'),
+    meta: { 
+      title: 'Registro - AhorroFácil || Control de gastos',
+      description: "Regístrate en nuestra app y comienza a controlar tus gastos familiares. Descubre cómo gestionar tus finanzas de manera efectiva y ahorrar dinero. ¡Únete hoy y toma el control de tus gastos!",
+    },
+  },
+  {
+    path: '/dashboard',
+    component: () => createComponent('Dash'),
+    meta: { 
+      title: 'Dashboard - AhorroFácil || Control de gastos',
+      description: "Accede a tus estadísticas de gastos familiares y visualiza tus gastos en un solo lugar. Gestiona tus finanzas de manera eficiente y ahorrar dinero. ¡Comienza hoy y toma el control de tus gastos!",
+    },
+  },
+  {
+    path: '/gasto',
+    component: () => createComponent('Gasto'),
+    meta: { 
+      title: 'Gasto - AhorroFácil || Control de gastos',
+      description: "Registra y gestiona cada gasto familiar. Gestiona tus finanzas de manera eficiente y ahorrar dinero. ¡Empieza a ahorrar y toma el control de tus gastos hoy mismo!",
+    },
+  },
+  {
+    path: '/contacto',
+    component: () => createComponent('Contacto'),
+    meta: { 
+      title: 'Contacto - AhorroFácil || Control de gastos',
+      description: "Contacta con nosotros para obtener ayuda y soporte en el control de tus gastos familiares. Aprende cómo gestionar tus finanzas de manera efectiva con nuestra app. ¡Estamos aquí para ayudarte!",
+    },
+  },
+  {
+    path: '/formsuccess',
+    component: () => createComponent('FormSuccess'),
+    meta: {
+      title: 'Formulario enviado con éxito - AhorroFácil || Control de gastos',
+    },
+  },
+  {
+    path: '/404',
+    component: () => createComponent('ErrorPage'),
+    meta: { title: 'Error - AhorroFácil || Control de gastos' },
+  },
   { path: '/test', component: () => createComponent('Test') },
   // { path: '/:pathMatch(.*)*', component: () =>  createComponent('ErrorPage')}
-];
+]
 
 export default routes;
