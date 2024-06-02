@@ -33,7 +33,7 @@ Our expense tracker family app provides a seamless solution for managing expense
   
     🔴 **Expenses - Receipt Upload**: *(TO BE ADDED)*
     - The app allows users to upload pictures of receipts, enhancing accuracy and organization.
-  
+   
     🟢 **Expenses - Form Validation**: *(ADDED)*
     - Form Validation: There is a validation for name different from empty and also number must be higher than 0. If so will display an error message.
     - **Update**: Form managed by built-in form detection provided by Netlify this feature simplifies the process of adding and managing forms. This eliminates the need for extra API calls or additional JavaScript. Once enabled, Netlify's build system automatically parses your HTML at deploy time, so there's no need for you to make an API call or include extra JavaScript on your site. The data provided by form is accessible on Netlify and can be exported to CSV.
@@ -67,6 +67,9 @@ Our expense tracker family app provides a seamless solution for managing expense
     - **Form + Validation**: There is a validation for name different from empty and mail must content '@' and '.com'. If not will display an error message.
     - **Update**: Form managed by built-in form detection provided by Netlify this feature simplifies the process of adding and managing forms. This eliminates the need for extra API calls or additional JavaScript. Once enabled, Netlify's build system automatically parses your HTML at deploy time, so there's no need for you to make an API call or include extra JavaScript on your site. The data provided by form is accessible on Netlify and can be exported to CSV.
     - Redirect Success: After Form submission there will be a redirect to a success page that displays a random picture on the background (there are 5).
+
+
+   🍉🍉🍉 **EXTRAS** 🍉🍉🍉
   
     🟢  **Theme Mode Control**: *(ADDED)*
     - The app offers theme mode control, allowing users to customize the appearance based on their preferences for enhanced user experience.
@@ -79,6 +82,9 @@ Our expense tracker family app provides a seamless solution for managing expense
   
     🟢  **Error Route**: *(ADDED)*
     - Case the user access a route that does not exist the ErrorPage component will be displayed which background is also a random image among 5 options.
+
+    🟢  **Netlify Automatic Form Detection & Notificaction**: *(ADDED)*
+    - Case the user submit form in "Expenses" or "Contact" page Netlify will automatically receive and store plus a notification by mail will be sent to owner of site.
 
 Overall, the app combines robust functionality, user-friendly design, and seamless accessibility to provide an efficient and enjoyable expense tracking experience for families.
 
@@ -98,14 +104,15 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=00C7B7&labelColor=101010)
 
 ## 🟦 Screenshoots
-<img src="assets/images/screenshots/register.png" alt="Register" style="width:500px;">
-<img src="assets/images/screenshots/dash.png" alt="Dashboard" style="width:500px;">
-<img src="assets/images/screenshots/gasto_light.png" alt="Gasto_light" style="width:500px;">
-<img src="assets/images/screenshots/gasto_dark.png" alt="Gasto_dark" style="width:500px;">
-<img src="assets/images/screenshots/successform.png" alt="SuccessForm" style="width:500px;">
-<img src="assets/images/screenshots/errorpage.png" alt="ErrorPage" style="width:500px;">
-<img src="assets/images/screenshots/responsive.png" alt="Responsive" style="height:500px;">
-<img src="assets/images/screenshots/stats.png" alt="Stats" style="width:500px;">
+<img src="assets/images/screenshots/register.png" alt="Register screenshot" style="width:500px;">
+<img src="assets/images/screenshots/dash.png" alt="Dashboard screenshot" style="width:500px;">
+<img src="assets/images/screenshots/gasto_light.png" alt="Gasto_light screenshot" style="width:500px;">
+<img src="assets/images/screenshots/gasto_dark.png" alt="Gasto_dark screenshot" style="width:500px;">
+<img src="assets/images/screenshots/successform.png" alt="SuccessForm screenshot" style="width:500px;">
+<img src="assets/images/screenshots/netlify_forms.png" alt="SuccessForm screenshot" style="width:500px;">
+<img src="assets/images/screenshots/errorpage.png" alt="ErrorPage screenshot" style="width:500px;">
+<img src="assets/images/screenshots/responsive.png" alt="Responsive screenshot" style="height:500px;">
+<img src="assets/images/screenshots/stats.png" alt="Stats screenshot" style="width:500px;">
 
 ## 🟦 Install
 - Download the project

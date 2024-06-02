@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AhorroFácil || Control de gastos</title>
     <!-- Favicon general -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_abacus.png"/>
-    <link rel="icon" type="image/x-icon" href="/assets/images/Abacus_35794.ico"/>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon_abacus.png"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/images/Abacus_35794.ico"
+    />
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="/assets/images/apple-touch-icon.png"/>
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="256x256"
+      href="/assets/images/apple-touch-icon.png"
+    />
     <!-- Manifest -->
     <link rel="manifest" href="/manifest.json" id="theme-manifest" />
     <!-- Meta Tags para SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="control de gastos, gastos familiares, gestión de finanzas, finanzas personales, aplicación de gastos, app de finanzas, registro de gastos, control financiero, presupuesto familiar, administración de dinero, economía familiar, ahorro">
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="control de gastos, gastos familiares, gestión de finanzas, finanzas personales, aplicación de gastos, app de finanzas, registro de gastos, control financiero, presupuesto familiar, administración de dinero, economía familiar, ahorro"
+    />
     <!-- Tema para navegadores móviles -->
     <meta name="theme-color" content="#49a7e9" />
     <!-- Meta Tags for Search Engine Optimisation -->
@@ -35,7 +52,7 @@
       property="og:url"
       content="https://expensesmanagercacpython24155g8front.netlify.app/"
     />
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="website" />
     <!-- Twitter Card Tags -->
     <meta name="twitter:title" content="AhorroFácil || Control de gastos" />
     <meta
@@ -61,7 +78,18 @@
           "name": "Ssergiomc, soluits, Miguelzu"
         }
       }
-    </script>      
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBZJQQGVJ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-PBZJQQGVJ7')
+    </script>
     <!-- Canonical Tag -->
     <link
       rel="canonical"
@@ -93,7 +121,7 @@
 
   <body id="app">
     <div class="main" :class="{ darktheme: isDarkMode }">
-      <header class='sticky-top'>
+      <header class="sticky-top">
         <appnavbar
           :isDarkMode="isDarkMode"
           :toggle-dark-mode="toggleDarkMode"
