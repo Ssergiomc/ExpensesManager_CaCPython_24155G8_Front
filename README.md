@@ -103,6 +103,11 @@ Overall, the app combines robust functionality, user-friendly design, and seamle
 
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=00C7B7&labelColor=101010)
 
+![GoogleSearchConsole](https://img.shields.io/badge/google_search_console-458CF5?style=for-the-badge&logo=googlesearchconsole&logoColor=458CF5&labelColor=101010)
+![GoogleAnalytics](https://img.shields.io/badge/google_analytics-E37400?style=for-the-badge&logo=googleanalytics&logoColor=E37400&labelColor=101010)
+![Hotjar](https://img.shields.io/badge/hotjar-FF3C00?style=for-the-badge&logo=hotjar&logoColor=FF3C00&labelColor=101010)
+
+
 ## 🟦 Screenshoots
 <img src="assets/images/screenshots/register.png" alt="Register screenshot" style="width:500px;">
 <img src="assets/images/screenshots/dash.png" alt="Dashboard screenshot" style="width:500px;">
